@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: KafkaPocMaven
+  cloud:
+    stream:
+      bindings:
+
+        kafkaPocMavenInput:
+          destination: KAFKA.POC.MAVEN.INPUT
+          #producer.useNativeEncoding: true  # to allow custom serializer
+        kafkaPocMavenOutput:
+          destination: KAFKA.POC.MAVEN.OUTPUT
+          #consumer.useNativeDecoding: true  # to allow custom deserializer        
+
+#      kafka:
+#        bindings:
+#          kafkaPocMavenOutput:
+#            producer:
+#              configuration:
+#                key.serializer: org.apache.kafka.common.serialization.StringSerializer
+#                value.serializer: com.appdirect.usage.rating.events.serialization.SpecificAvroSerializer
+#          kafkaPocMavenInput:
+#            consumer:
+#              configuration:
+#                key.deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#                value.deserializer: com.appdirect.usage.rating.events.serialization.SpecificAvroDeserializer
+#                value.deserializer.className: com.appdirect.usage.rating.events.message.ResolvedUsageEvent
