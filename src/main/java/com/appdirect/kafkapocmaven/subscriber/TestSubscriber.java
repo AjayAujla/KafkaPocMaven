@@ -12,7 +12,7 @@ import com.appdirect.kafkapocmaven.model.Message;
 @Component
 public class TestSubscriber {
 
-    @StreamListener(Bindings.KAFKA_POC_MAVEN_INPUT)
+    @StreamListener(Bindings.KAFKA_POC_MAVEN_TOPIC)
     public void subscribe(final Message message) {
         log.info("AJAY Received message={}", message);
     }

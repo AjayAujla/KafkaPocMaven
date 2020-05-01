@@ -6,12 +6,11 @@ import org.springframework.messaging.MessageChannel;
 
 public interface Bindings {
 
-    String KAFKA_POC_MAVEN_INPUT = "kafkaPocMavenInput";
-    String KAFKA_POC_MAVEN_OUTPUT = "kafkaPocMavenOutput";
+    String KAFKA_POC_MAVEN_TOPIC = "kafkaPocMavenTopic";
 
-    @Input(KAFKA_POC_MAVEN_INPUT)
+    @Input(KAFKA_POC_MAVEN_TOPIC)
     MessageChannel input();
 
-    @Output(KAFKA_POC_MAVEN_OUTPUT)
+    @Output(KAFKA_POC_MAVEN_TOPIC)
     MessageChannel output();
 }
