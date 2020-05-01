@@ -12,20 +12,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.appdirect.kafkapocmaven.model.Bindings;
-import com.appdirect.kafkapocmaven.model.Message;
+import com.appdirect.kafkapocmaven.model.TopicBody;
 
 @Slf4j
 @RestController
 @RequestMapping("/publish")
-public class TestPublisher {
+public class PublisherController {
 
     @Autowired
     private Bindings bindings;
 
     @PostMapping
-    public ResponseEntity publish(@RequestBody final Message message) {
-        log.info("AJAY Publishing message={}", message);
-        bindings.output().send(MessageBuilder.withPayload(message).build());
+    public ResponseEntity publish(@RequestBody final TopicBody topicBody) {
+        log.info("AJAY Publishing topicBody={}", topicBody);
+        bindings.output().send(MessageBuilder.withPayload(topicBody).build());
         return ResponseEntity.noContent().build();
 
     }

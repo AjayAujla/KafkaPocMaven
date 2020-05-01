@@ -8,6 +8,6 @@ import lombok.Setter;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Message {
+public class TopicBody {
     private String message;
 }

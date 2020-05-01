@@ -6,14 +6,14 @@ import org.springframework.cloud.stream.annotation.StreamListener;
 import org.springframework.stereotype.Component;
 
 import com.appdirect.kafkapocmaven.model.Bindings;
-import com.appdirect.kafkapocmaven.model.Message;
+import com.appdirect.kafkapocmaven.model.TopicBody;
 
 @Slf4j
 @Component
-public class TestSubscriber {
+public class SubscriberComponent {
 
     @StreamListener(Bindings.KAFKA_POC_MAVEN_TOPIC)
-    public void subscribe(final Message message) {
-        log.info("AJAY Received message={}", message);
+    public void subscribe(final TopicBody topicBody) {
+        log.info("AJAY Received topicBody={}", topicBody);
     }
 }
