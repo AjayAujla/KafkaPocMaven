@@ -1,9 +1,10 @@
-package com.appdirect.kafkapocmaven.publisher;
+package com.appdirect.kafkapocmaven.controller;
 
 import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.messaging.Message;
 import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -25,9 +26,9 @@ public class PublisherController {
     @PostMapping
     public ResponseEntity publish(@RequestBody final TopicBody topicBody) {
         log.info("AJAY Publishing topicBody={}", topicBody);
-        bindings.output().send(MessageBuilder.withPayload(topicBody).build());
+        final Message<TopicBody> message = MessageBuilder.withPayload(topicBody).build();
+        bindings.output().send(message);
         return ResponseEntity.noContent().build();
-
     }
 
     @GetMapping

@@ -1,4 +1,4 @@
-package com.appdirect.kafkapocmaven.subscriber;
+package com.appdirect.kafkapocmaven.component;
 
 import lombok.extern.slf4j.Slf4j;
 

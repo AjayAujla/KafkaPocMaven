@@ -1,7 +1,7 @@
 {
   "type":"record",
   "name":"MicrosoftTenantEvent",
-  "namespace":"com.appdirect.test",
+  "namespace":"com.appdirect.kafkapocmaven.model",
   "fields":[
     {"name": "user_id", "type": "string"},
     {"name": "sales_agent_user_id", "type": "string"},
@@ -10,7 +10,7 @@
     {"name": "event_type", "type": ["null", {"type": "enum", "name": "MicrosoftTenantEventType", "symbols": ["CREATED"]} ]},
     {"name": "company_id", "type": "string"},
     {"name": "external_company_id", "type": "string"},
-    {"name": "batch_id", "type": "int64"},
+    {"name": "batch_id", "type": "string"},
     {"name": "customer_id", "type": "string"},
     {"name": "sales_agent_customer_id", "type": "string"},
     {"name": "tenant_domain", "type": "string"},

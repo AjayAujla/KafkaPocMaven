@@ -1,7 +1,7 @@
 {
   "type":"record",
   "name":"CspTokenEvent",
-  "namespace":"com.appdirect.test",
+  "namespace":"com.appdirect.kafkapocmaven.model",
   "fields":[
     {"name": "creation_date_time", "type": "string"},
     {"name": "expiration_date_time", "type": "string"},
