@@ -5,8 +5,7 @@
   "fields":[
     {"name": "creation_date_time", "type": "string"},
     {"name": "expiration_date_time", "type": "string"},
-    {"name": "days_remaining", "type": "int"},
-    {"name": "authorizer", "type": "long"},
+    {"name": "authorizer", "type": "string"},
     {"name": "tenant_domain", "type": "string"},
     {"name": "event_type", "type": ["null", {"type": "enum", "name": "CspTokenEventType", "symbols": ["CREATED", "UPDATED", "EXPIRING", "EXPIRED"]} ]}
   ]
