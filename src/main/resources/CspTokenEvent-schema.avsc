@@ -1,0 +1,13 @@
+{
+  "type":"record",
+  "name":"CspTokenEvent",
+  "namespace":"com.appdirect.test",
+  "fields":[
+    {"name": "creation_date_time", "type": "string"},
+    {"name": "expiration_date_time", "type": "string"},
+    {"name": "days_remaining", "type": "int"},
+    {"name": "authorizer", "type": "long"},
+    {"name": "tenant_domain", "type": "string"},
+    {"name": "event_type", "type": ["null", {"type": "enum", "name": "CspTokenEventType", "symbols": ["CREATED", "UPDATED", "EXPIRING", "EXPIRED"]} ]}
+  ]
+}
