@@ -17,7 +17,7 @@ public class MicrosoftTenantEventSubscriberComponent {
     @Autowired
     private SerializationService serializationService;
 
-    @StreamListener(MicrosoftTenantEventBindings.KAFKA_POC_MAVEN_TOPIC_MICROSOFT_TENANT_EVENT)
+    @StreamListener(MicrosoftTenantEventBindings.TOPIC_MICROSOFT_TENANT_EVENT)
     public void subscribe(final byte[] body) {
         final MicrosoftTenantEvent event = serializationService.deserialize(body, MicrosoftTenantEvent.class);
         log.info("AJAY Received MicrosoftTenantEvent={}", event);

@@ -17,7 +17,7 @@ public class CspTokenEventSubscriberComponent {
     @Autowired
     private SerializationService serializationService;
 
-    @StreamListener(CspTokenEventBindings.KAFKA_POC_MAVEN_TOPIC_CSP_TOKEN_EVENT)
+    @StreamListener(CspTokenEventBindings.TOPIC_CSP_TOKEN_EVENT)
     public void subscribe(final byte[] body) {
         final CspTokenEvent event = serializationService.deserialize(body, CspTokenEvent.class);
         log.info("AJAY Received CspTokenEvent={}", event);

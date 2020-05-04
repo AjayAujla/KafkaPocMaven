@@ -6,11 +6,11 @@ import org.springframework.messaging.MessageChannel;
 
 public interface MicrosoftTenantEventBindings {
 
-    String KAFKA_POC_MAVEN_TOPIC_MICROSOFT_TENANT_EVENT = "kafkaPocMavenTopicMicrosoftTenantEvent";
+    String TOPIC_MICROSOFT_TENANT_EVENT = "Topic-MicrosoftTenantEvent";
 
-    @Input(KAFKA_POC_MAVEN_TOPIC_MICROSOFT_TENANT_EVENT)
+    @Input(TOPIC_MICROSOFT_TENANT_EVENT)
     MessageChannel input();
 
-    @Output(KAFKA_POC_MAVEN_TOPIC_MICROSOFT_TENANT_EVENT)
+    @Output(TOPIC_MICROSOFT_TENANT_EVENT)
     MessageChannel output();
 }

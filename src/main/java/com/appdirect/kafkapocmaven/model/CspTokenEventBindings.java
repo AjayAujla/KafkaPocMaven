@@ -6,11 +6,11 @@ import org.springframework.messaging.MessageChannel;
 
 public interface CspTokenEventBindings {
 
-    String KAFKA_POC_MAVEN_TOPIC_CSP_TOKEN_EVENT = "kafkaPocMavenTopicCspTokenEvent";
+    String TOPIC_CSP_TOKEN_EVENT = "Topic-CspTokenEvent";
 
-    @Input(KAFKA_POC_MAVEN_TOPIC_CSP_TOKEN_EVENT)
+    @Input(TOPIC_CSP_TOKEN_EVENT)
     MessageChannel input();
 
-    @Output(KAFKA_POC_MAVEN_TOPIC_CSP_TOKEN_EVENT)
+    @Output(TOPIC_CSP_TOKEN_EVENT)
     MessageChannel output();
 }
