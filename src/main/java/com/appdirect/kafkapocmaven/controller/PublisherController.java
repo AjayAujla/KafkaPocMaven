@@ -33,7 +33,7 @@ public class PublisherController {
     public ResponseEntity publish() {
 //        final MicrosoftTenantEvent event = new MicrosoftTenantEvent("userId", "salesAgentUserId", "partner", "sku", MicrosoftTenantEventType.CREATED, "companyId", "externalCompanyId", "batchId", "customerId", "salesAgentCustomerId", "tenantDomain", "creationDateTime", 1, "tenantAdminEmail", "purchaserName");
         final CspTokenEvent event = new CspTokenEvent("creationDateTime", "expirationDateTime", "authorizer", "tenantDomain", CspTokenEventType.CREATED);
-        final byte[] serialized = serializationService.serialize(event);
+        final byte[] serialized = serializationService.serialize(event, CspTokenEvent.class);
         final Message<byte[]> message = MessageBuilder.withPayload(serialized).build();
         
         log.info("AJAY Publishing event={}", event);

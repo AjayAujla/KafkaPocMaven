@@ -12,7 +12,6 @@ import org.apache.avro.io.DecoderFactory;
 import org.apache.avro.io.EncoderFactory;
 import org.apache.avro.specific.SpecificDatumReader;
 import org.apache.avro.specific.SpecificDatumWriter;
-import org.apache.avro.specific.SpecificRecordBase;
 import org.springframework.stereotype.Service;
 
 import com.appdirect.kafkapocmaven.model.CspTokenEvent;
@@ -20,17 +19,9 @@ import com.appdirect.kafkapocmaven.model.MicrosoftTenantEvent;
 
 @Service
 public class SerializationService {
-    public byte[] serialize(final MicrosoftTenantEvent payload) {
-        final DatumWriter<MicrosoftTenantEvent> writer = new SpecificDatumWriter<>(MicrosoftTenantEvent.class);
-        return serialize(payload, writer);
-    }
-
-    public byte[] serialize(final CspTokenEvent payload) {
-        final DatumWriter<CspTokenEvent> writer = new SpecificDatumWriter<>(CspTokenEvent.class);
-        return serialize(payload, writer);
-    }
-
-    private <T extends SpecificRecordBase> byte[] serialize(final T payload, final DatumWriter<T> writer) {
+    
+    public <T> byte[] serialize(final T payload, final Class<T> clazz) {
+        final DatumWriter<T> writer = new SpecificDatumWriter<>(clazz);
         byte[] byteArr;
 
         try (final ByteArrayOutputStream out = new ByteArrayOutputStream()) {
