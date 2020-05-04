@@ -28,15 +28,48 @@ public class PublisherController {
 
     @Autowired
     private SerializationService serializationService;
-    
-    @PostMapping
-    public ResponseEntity publish() {
-//        final MicrosoftTenantEvent event = new MicrosoftTenantEvent("userId", "salesAgentUserId", "partner", "sku", MicrosoftTenantEventType.CREATED, "companyId", "externalCompanyId", "batchId", "customerId", "salesAgentCustomerId", "tenantDomain", "creationDateTime", 1, "tenantAdminEmail", "purchaserName");
-        final CspTokenEvent event = new CspTokenEvent("creationDateTime", "expirationDateTime", "authorizer", "tenantDomain", CspTokenEventType.CREATED);
+
+    @PostMapping("/1")
+    public ResponseEntity publish1() {
+        final MicrosoftTenantEvent event = MicrosoftTenantEvent.newBuilder()
+                .setUserId("userId")
+                .setSalesAgentUserId("salesAgentUserId")
+                .setPartner("partner")
+                .setSku("sku")
+                .setEventType(MicrosoftTenantEventType.CREATED)
+                .setCompanyId("companyId")
+                .setExternalCompanyId("externalCompanyId")
+                .setBatchId("batchId")
+                .setCustomerId("customerId")
+                .setSalesAgentCustomerId("salesAgentCustomerId")
+                .setTenantDomain("tenantDomain")
+                .setCreationDateTime("creationDateTime")
+                .setMarketplaceOrderNumber(1)
+                .setTenantAdminEmail("tenantAdminEmail")
+                .setPurchaserName("purchaserName")
+                .build();
+        final byte[] serialized = serializationService.serialize(event, MicrosoftTenantEvent.class);
+        final Message<byte[]> message = MessageBuilder.withPayload(serialized).build();
+
+        log.info("AJAY Publishing MicrosoftTenantEvent={}", event);
+        bindings.output().send(message);
+
+        return ResponseEntity.noContent().build();
+    }
+
+    @PostMapping("/2")
+    public ResponseEntity publish2() {
+        final CspTokenEvent event = CspTokenEvent.newBuilder()
+                .setCreationDateTime("creationDateTime")
+                .setExpirationDateTime("expirationDateTime")
+                .setAuthorizer("authorizer")
+                .setTenantDomain("tenantDomain")
+                .setEventType(CspTokenEventType.CREATED)
+                .build();
         final byte[] serialized = serializationService.serialize(event, CspTokenEvent.class);
         final Message<byte[]> message = MessageBuilder.withPayload(serialized).build();
-        
-        log.info("AJAY Publishing event={}", event);
+
+        log.info("AJAY Publishing CspTokenEvent={}", event);
         bindings.output().send(message);
 
         return ResponseEntity.noContent().build();
