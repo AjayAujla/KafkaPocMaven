@@ -24,8 +24,7 @@ public class SerializationService {
             writer.write(payload, encoder);
             encoder.flush();
             return out.toByteArray();
-
-        } catch (IOException e) {
+        } catch (final IOException e) {
             throw new AvroRuntimeException("Avro message could not be serialized", e);
         }
     }

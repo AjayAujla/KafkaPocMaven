@@ -18,8 +18,8 @@ public class MicrosoftTenantEventSubscriberComponent {
     private SerializationService serializationService;
 
     @StreamListener(MicrosoftTenantEventBindings.TOPIC_MICROSOFT_TENANT_EVENT)
-    public void subscribe(final byte[] body) {
-        final MicrosoftTenantEvent event = serializationService.deserialize(body, MicrosoftTenantEvent.class);
+    public void subscribe(final byte[] payload) {
+        final MicrosoftTenantEvent event = serializationService.deserialize(payload, MicrosoftTenantEvent.class);
         log.info("AJAY Received MicrosoftTenantEvent={}", event);
     }
 }

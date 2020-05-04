@@ -18,8 +18,8 @@ public class CspTokenEventSubscriberComponent {
     private SerializationService serializationService;
 
     @StreamListener(CspTokenEventBindings.TOPIC_CSP_TOKEN_EVENT)
-    public void subscribe(final byte[] body) {
-        final CspTokenEvent event = serializationService.deserialize(body, CspTokenEvent.class);
+    public void subscribe(final byte[] payload) {
+        final CspTokenEvent event = serializationService.deserialize(payload, CspTokenEvent.class);
         log.info("AJAY Received CspTokenEvent={}", event);
     }
 }
