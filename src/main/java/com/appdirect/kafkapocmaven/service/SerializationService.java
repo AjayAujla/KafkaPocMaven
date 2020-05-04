@@ -14,28 +14,21 @@ import org.apache.avro.specific.SpecificDatumReader;
 import org.apache.avro.specific.SpecificDatumWriter;
 import org.springframework.stereotype.Service;
 
-import com.appdirect.kafkapocmaven.model.CspTokenEvent;
-import com.appdirect.kafkapocmaven.model.MicrosoftTenantEvent;
-
 @Service
 public class SerializationService {
-    
+
     public <T> byte[] serialize(final T payload, final Class<T> clazz) {
         final DatumWriter<T> writer = new SpecificDatumWriter<>(clazz);
-        byte[] byteArr;
-
         try (final ByteArrayOutputStream out = new ByteArrayOutputStream()) {
             final BinaryEncoder encoder = EncoderFactory.get().directBinaryEncoder(out, null);
             writer.write(payload, encoder);
             encoder.flush();
-            byteArr = out.toByteArray();
+            return out.toByteArray();
 
         } catch (IOException e) {
             throw new AvroRuntimeException("Avro message could not be serialized", e);
         }
-        return byteArr;
     }
-
 
     public <T> T deserialize(final byte[] payload, final Class<T> clazz) {
         final DatumReader<T> reader = new SpecificDatumReader<>(clazz);
