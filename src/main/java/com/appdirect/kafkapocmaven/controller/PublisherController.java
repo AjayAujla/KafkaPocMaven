@@ -11,10 +11,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.appdirect.kafkapocmaven.model.Bindings;
 import com.appdirect.kafkapocmaven.model.CspTokenEvent;
+import com.appdirect.kafkapocmaven.model.CspTokenEventBindings;
 import com.appdirect.kafkapocmaven.model.CspTokenEventType;
 import com.appdirect.kafkapocmaven.model.MicrosoftTenantEvent;
+import com.appdirect.kafkapocmaven.model.MicrosoftTenantEventBindings;
 import com.appdirect.kafkapocmaven.model.MicrosoftTenantEventType;
 import com.appdirect.kafkapocmaven.service.SerializationService;
 
@@ -24,7 +25,10 @@ import com.appdirect.kafkapocmaven.service.SerializationService;
 public class PublisherController {
 
     @Autowired
-    private Bindings bindings;
+    private CspTokenEventBindings cspTokenEventBindings;
+
+    @Autowired
+    private MicrosoftTenantEventBindings microsoftTenantEventBindings;
 
     @Autowired
     private SerializationService serializationService;
@@ -52,7 +56,7 @@ public class PublisherController {
         final Message<byte[]> message = MessageBuilder.withPayload(serialized).build();
 
         log.info("AJAY Publishing MicrosoftTenantEvent={}", event);
-        bindings.output().send(message);
+        microsoftTenantEventBindings.output().send(message);
 
         return ResponseEntity.noContent().build();
     }
@@ -70,7 +74,7 @@ public class PublisherController {
         final Message<byte[]> message = MessageBuilder.withPayload(serialized).build();
 
         log.info("AJAY Publishing CspTokenEvent={}", event);
-        bindings.output().send(message);
+        cspTokenEventBindings.output().send(message);
 
         return ResponseEntity.noContent().build();
     }

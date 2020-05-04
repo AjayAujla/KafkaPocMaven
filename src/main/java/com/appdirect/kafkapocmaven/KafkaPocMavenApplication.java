@@ -4,9 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.stream.annotation.EnableBinding;
 
-import com.appdirect.kafkapocmaven.model.Bindings;
+import com.appdirect.kafkapocmaven.model.CspTokenEventBindings;
+import com.appdirect.kafkapocmaven.model.MicrosoftTenantEventBindings;
 
-@EnableBinding({Bindings.class})
+@EnableBinding({CspTokenEventBindings.class, MicrosoftTenantEventBindings.class})
 @SpringBootApplication
 public class KafkaPocMavenApplication {
 

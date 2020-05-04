@@ -5,5 +5,8 @@ spring:
     stream:
       bindings:
 
-        kafkaPocMavenTopic:
-          destination: KAFKA.POC.MAVEN.TOPIC
+        kafkaPocMavenTopicMicrosoftTenantEvent:
+          destination: KAFKA.POC.MAVEN.TOPIC.MICROSOFT.TENANT.EVENT
+
+        kafkaPocMavenTopicCspTokenEvent:
+          destination: KAFKA.POC.MAVEN.TOPIC.CSP.TOKEN.EVENT

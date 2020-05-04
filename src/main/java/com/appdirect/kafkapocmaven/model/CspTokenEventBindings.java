@@ -4,13 +4,13 @@ import org.springframework.cloud.stream.annotation.Input;
 import org.springframework.cloud.stream.annotation.Output;
 import org.springframework.messaging.MessageChannel;
 
-public interface Bindings {
+public interface CspTokenEventBindings {
 
-    String KAFKA_POC_MAVEN_TOPIC = "kafkaPocMavenTopic";
+    String KAFKA_POC_MAVEN_TOPIC_CSP_TOKEN_EVENT = "kafkaPocMavenTopicCspTokenEvent";
 
-    @Input(KAFKA_POC_MAVEN_TOPIC)
+    @Input(KAFKA_POC_MAVEN_TOPIC_CSP_TOKEN_EVENT)
     MessageChannel input();
 
-    @Output(KAFKA_POC_MAVEN_TOPIC)
+    @Output(KAFKA_POC_MAVEN_TOPIC_CSP_TOKEN_EVENT)
     MessageChannel output();
 }
