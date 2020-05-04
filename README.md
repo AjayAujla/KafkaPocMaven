@@ -79,3 +79,9 @@ public class Application {
 
 }
 ```
+
+# References
+
+https://github.com/AppDirect/usage-events/blob/d431155956a58995e8584f1a56bbca181e019d58/avro-schema/readme.md
+
+https://github.com/AppDirect/fusion_poc/tree/master/wg-eda/schema-registry/java
