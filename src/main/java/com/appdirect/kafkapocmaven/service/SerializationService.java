@@ -4,7 +4,6 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
 import org.apache.avro.AvroRuntimeException;
-import org.apache.avro.io.BinaryDecoder;
 import org.apache.avro.io.BinaryEncoder;
 import org.apache.avro.io.DatumReader;
 import org.apache.avro.io.DatumWriter;
@@ -46,17 +45,17 @@ public class SerializationService {
         return byteArr;
     }
 
-    public MicrosoftTenantEvent deserialize1(final byte[] payload) {
-        final DatumReader<MicrosoftTenantEvent> reader = new SpecificDatumReader<>(MicrosoftTenantEvent.class);
-        return deserialize(payload, reader);
+
+    public MicrosoftTenantEvent deserializeMicrosoftTenantEvent(final byte[] payload) {
+        return deserialize(payload, MicrosoftTenantEvent.class);
     }
 
-    public CspTokenEvent deserialize2(final byte[] payload) {
-        final DatumReader<CspTokenEvent> reader = new SpecificDatumReader<>(CspTokenEvent.class);
-        return deserialize(payload, reader);
+    public CspTokenEvent deserializeCspTokenEvent(final byte[] payload) {
+        return deserialize(payload, CspTokenEvent.class);
     }
 
-    private <T> T deserialize(final byte[] payload, final DatumReader<T> reader) {
+    private <T> T deserialize(final byte[] payload, final Class<T> clazz) {
+        final DatumReader<T> reader = new SpecificDatumReader<>(clazz);
         try {
             final Decoder decoder = DecoderFactory.get().binaryDecoder(payload, null);
             return reader.read(null, decoder);
