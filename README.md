@@ -8,6 +8,22 @@
 
 Perform `mvn clean compile` to execute it.
 
+## Running
+
+`POST` `http://localhost:8080/publish/1`
+
+```
+Publishing MicrosoftTenantEvent={"user_id": "userId", "sales_agent_user_id": "salesAgentUserId", "partner": "partner", "sku": "sku", "event_type": "CREATED", "company_id": "companyId", "external_company_id": "externalCompanyId", "batch_id": "batchId", "customer_id": "customerId", "sales_agent_customer_id": "salesAgentCustomerId", "tenant_domain": "tenantDomain", "creation_date_time": 1588600243171, "marketplace_order_number": 1, "tenant_admin_email": "tenantAdminEmail", "purchaser_name": "purchaserName"}
+Received MicrosoftTenantEvent={"user_id": "userId", "sales_agent_user_id": "salesAgentUserId", "partner": "partner", "sku": "sku", "event_type": "CREATED", "company_id": "companyId", "external_company_id": "externalCompanyId", "batch_id": "batchId", "customer_id": "customerId", "sales_agent_customer_id": "salesAgentCustomerId", "tenant_domain": "tenantDomain", "creation_date_time": 1588600243171, "marketplace_order_number": 1, "tenant_admin_email": "tenantAdminEmail", "purchaser_name": "purchaserName"}
+```
+
+`POST` `http://localhost:8080/publish/2`
+
+```
+Publishing CspTokenEvent={"creation_date_time": 1588600246150, "expiration_date_time": 1588600246150, "authorizer": "authorizer", "tenant_domain": "tenantDomain", "event_type": "CREATED"}
+Received CspTokenEvent={"creation_date_time": 1588600246150, "expiration_date_time": 1588600246150, "authorizer": "authorizer", "tenant_domain": "tenantDomain", "event_type": "CREATED"}
+```
+
 ## Project Guide
 
 ##### src/main/resources/*-schema.avsc
