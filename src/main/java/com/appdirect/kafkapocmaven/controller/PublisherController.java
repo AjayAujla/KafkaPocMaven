@@ -1,5 +1,7 @@
 package com.appdirect.kafkapocmaven.controller;
 
+import java.util.Date;
+
 import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,7 +49,7 @@ public class PublisherController {
                 .setCustomerId("customerId")
                 .setSalesAgentCustomerId("salesAgentCustomerId")
                 .setTenantDomain("tenantDomain")
-                .setCreationDateTime("creationDateTime")
+                .setCreationDateTime(new Date().getTime())
                 .setMarketplaceOrderNumber(1)
                 .setTenantAdminEmail("tenantAdminEmail")
                 .setPurchaserName("purchaserName")
@@ -64,8 +66,8 @@ public class PublisherController {
     @PostMapping("/2")
     public ResponseEntity publish2() {
         final CspTokenEvent event = CspTokenEvent.newBuilder()
-                .setCreationDateTime("creationDateTime")
-                .setExpirationDateTime("expirationDateTime")
+                .setCreationDateTime(new Date().getTime())
+                .setExpirationDateTime(new Date().getTime())
                 .setAuthorizer("authorizer")
                 .setTenantDomain("tenantDomain")
                 .setEventType(CspTokenEventType.CREATED)

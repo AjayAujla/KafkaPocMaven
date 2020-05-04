@@ -3,8 +3,8 @@
   "name":"CspTokenEvent",
   "namespace":"com.appdirect.kafkapocmaven.model",
   "fields":[
-    {"name": "creation_date_time", "type": "string"},
-    {"name": "expiration_date_time", "type": "string"},
+    {"name": "creation_date_time", "type": "long", "logicalType": "timestamp-millis"},
+    {"name": "expiration_date_time", "type": "long", "logicalType": "timestamp-millis"},
     {"name": "authorizer", "type": "string"},
     {"name": "tenant_domain", "type": "string"},
     {"name": "event_type", "type": ["null", {"type": "enum", "name": "CspTokenEventType", "symbols": ["CREATED", "UPDATED", "EXPIRING", "EXPIRED"]} ]}

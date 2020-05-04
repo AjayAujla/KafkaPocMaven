@@ -13,8 +13,8 @@ import org.apache.avro.message.SchemaStore;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class MicrosoftTenantEvent extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = -1866558647793591815L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"MicrosoftTenantEvent\",\"namespace\":\"com.appdirect.kafkapocmaven.model\",\"fields\":[{\"name\":\"user_id\",\"type\":\"string\"},{\"name\":\"sales_agent_user_id\",\"type\":\"string\"},{\"name\":\"partner\",\"type\":\"string\"},{\"name\":\"sku\",\"type\":\"string\"},{\"name\":\"event_type\",\"type\":[\"null\",{\"type\":\"enum\",\"name\":\"MicrosoftTenantEventType\",\"symbols\":[\"CREATED\"]}]},{\"name\":\"company_id\",\"type\":\"string\"},{\"name\":\"external_company_id\",\"type\":\"string\"},{\"name\":\"batch_id\",\"type\":\"string\"},{\"name\":\"customer_id\",\"type\":\"string\"},{\"name\":\"sales_agent_customer_id\",\"type\":\"string\"},{\"name\":\"tenant_domain\",\"type\":\"string\"},{\"name\":\"creation_date_time\",\"type\":\"string\"},{\"name\":\"marketplace_order_number\",\"type\":\"int\"},{\"name\":\"tenant_admin_email\",\"type\":\"string\"},{\"name\":\"purchaser_name\",\"type\":\"string\"}]}");
+  private static final long serialVersionUID = -8259991170113830136L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"MicrosoftTenantEvent\",\"namespace\":\"com.appdirect.kafkapocmaven.model\",\"fields\":[{\"name\":\"user_id\",\"type\":\"string\"},{\"name\":\"sales_agent_user_id\",\"type\":\"string\"},{\"name\":\"partner\",\"type\":\"string\"},{\"name\":\"sku\",\"type\":\"string\"},{\"name\":\"event_type\",\"type\":[\"null\",{\"type\":\"enum\",\"name\":\"MicrosoftTenantEventType\",\"symbols\":[\"CREATED\"]}]},{\"name\":\"company_id\",\"type\":\"string\"},{\"name\":\"external_company_id\",\"type\":\"string\"},{\"name\":\"batch_id\",\"type\":\"string\"},{\"name\":\"customer_id\",\"type\":\"string\"},{\"name\":\"sales_agent_customer_id\",\"type\":\"string\"},{\"name\":\"tenant_domain\",\"type\":\"string\"},{\"name\":\"creation_date_time\",\"type\":\"long\",\"logicalType\":\"timestamp-millis\"},{\"name\":\"marketplace_order_number\",\"type\":\"int\"},{\"name\":\"tenant_admin_email\",\"type\":\"string\"},{\"name\":\"purchaser_name\",\"type\":\"string\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
@@ -62,7 +62,7 @@ public class MicrosoftTenantEvent extends org.apache.avro.specific.SpecificRecor
   @Deprecated public java.lang.CharSequence customer_id;
   @Deprecated public java.lang.CharSequence sales_agent_customer_id;
   @Deprecated public java.lang.CharSequence tenant_domain;
-  @Deprecated public java.lang.CharSequence creation_date_time;
+  @Deprecated public long creation_date_time;
   @Deprecated public int marketplace_order_number;
   @Deprecated public java.lang.CharSequence tenant_admin_email;
   @Deprecated public java.lang.CharSequence purchaser_name;
@@ -92,7 +92,7 @@ public class MicrosoftTenantEvent extends org.apache.avro.specific.SpecificRecor
    * @param tenant_admin_email The new value for tenant_admin_email
    * @param purchaser_name The new value for purchaser_name
    */
-  public MicrosoftTenantEvent(java.lang.CharSequence user_id, java.lang.CharSequence sales_agent_user_id, java.lang.CharSequence partner, java.lang.CharSequence sku, com.appdirect.kafkapocmaven.model.MicrosoftTenantEventType event_type, java.lang.CharSequence company_id, java.lang.CharSequence external_company_id, java.lang.CharSequence batch_id, java.lang.CharSequence customer_id, java.lang.CharSequence sales_agent_customer_id, java.lang.CharSequence tenant_domain, java.lang.CharSequence creation_date_time, java.lang.Integer marketplace_order_number, java.lang.CharSequence tenant_admin_email, java.lang.CharSequence purchaser_name) {
+  public MicrosoftTenantEvent(java.lang.CharSequence user_id, java.lang.CharSequence sales_agent_user_id, java.lang.CharSequence partner, java.lang.CharSequence sku, com.appdirect.kafkapocmaven.model.MicrosoftTenantEventType event_type, java.lang.CharSequence company_id, java.lang.CharSequence external_company_id, java.lang.CharSequence batch_id, java.lang.CharSequence customer_id, java.lang.CharSequence sales_agent_customer_id, java.lang.CharSequence tenant_domain, java.lang.Long creation_date_time, java.lang.Integer marketplace_order_number, java.lang.CharSequence tenant_admin_email, java.lang.CharSequence purchaser_name) {
     this.user_id = user_id;
     this.sales_agent_user_id = sales_agent_user_id;
     this.partner = partner;
@@ -148,7 +148,7 @@ public class MicrosoftTenantEvent extends org.apache.avro.specific.SpecificRecor
     case 8: customer_id = (java.lang.CharSequence)value$; break;
     case 9: sales_agent_customer_id = (java.lang.CharSequence)value$; break;
     case 10: tenant_domain = (java.lang.CharSequence)value$; break;
-    case 11: creation_date_time = (java.lang.CharSequence)value$; break;
+    case 11: creation_date_time = (java.lang.Long)value$; break;
     case 12: marketplace_order_number = (java.lang.Integer)value$; break;
     case 13: tenant_admin_email = (java.lang.CharSequence)value$; break;
     case 14: purchaser_name = (java.lang.CharSequence)value$; break;
@@ -336,7 +336,7 @@ public class MicrosoftTenantEvent extends org.apache.avro.specific.SpecificRecor
    * Gets the value of the 'creation_date_time' field.
    * @return The value of the 'creation_date_time' field.
    */
-  public java.lang.CharSequence getCreationDateTime() {
+  public java.lang.Long getCreationDateTime() {
     return creation_date_time;
   }
 
@@ -344,7 +344,7 @@ public class MicrosoftTenantEvent extends org.apache.avro.specific.SpecificRecor
    * Sets the value of the 'creation_date_time' field.
    * @param value the value to set.
    */
-  public void setCreationDateTime(java.lang.CharSequence value) {
+  public void setCreationDateTime(java.lang.Long value) {
     this.creation_date_time = value;
   }
 
@@ -439,7 +439,7 @@ public class MicrosoftTenantEvent extends org.apache.avro.specific.SpecificRecor
     private java.lang.CharSequence customer_id;
     private java.lang.CharSequence sales_agent_customer_id;
     private java.lang.CharSequence tenant_domain;
-    private java.lang.CharSequence creation_date_time;
+    private long creation_date_time;
     private int marketplace_order_number;
     private java.lang.CharSequence tenant_admin_email;
     private java.lang.CharSequence purchaser_name;
@@ -1018,7 +1018,7 @@ public class MicrosoftTenantEvent extends org.apache.avro.specific.SpecificRecor
       * Gets the value of the 'creation_date_time' field.
       * @return The value.
       */
-    public java.lang.CharSequence getCreationDateTime() {
+    public java.lang.Long getCreationDateTime() {
       return creation_date_time;
     }
 
@@ -1027,7 +1027,7 @@ public class MicrosoftTenantEvent extends org.apache.avro.specific.SpecificRecor
       * @param value The value of 'creation_date_time'.
       * @return This builder.
       */
-    public com.appdirect.kafkapocmaven.model.MicrosoftTenantEvent.Builder setCreationDateTime(java.lang.CharSequence value) {
+    public com.appdirect.kafkapocmaven.model.MicrosoftTenantEvent.Builder setCreationDateTime(long value) {
       validate(fields()[11], value);
       this.creation_date_time = value;
       fieldSetFlags()[11] = true;
@@ -1048,7 +1048,6 @@ public class MicrosoftTenantEvent extends org.apache.avro.specific.SpecificRecor
       * @return This builder.
       */
     public com.appdirect.kafkapocmaven.model.MicrosoftTenantEvent.Builder clearCreationDateTime() {
-      creation_date_time = null;
       fieldSetFlags()[11] = false;
       return this;
     }
@@ -1185,7 +1184,7 @@ public class MicrosoftTenantEvent extends org.apache.avro.specific.SpecificRecor
         record.customer_id = fieldSetFlags()[8] ? this.customer_id : (java.lang.CharSequence) defaultValue(fields()[8]);
         record.sales_agent_customer_id = fieldSetFlags()[9] ? this.sales_agent_customer_id : (java.lang.CharSequence) defaultValue(fields()[9]);
         record.tenant_domain = fieldSetFlags()[10] ? this.tenant_domain : (java.lang.CharSequence) defaultValue(fields()[10]);
-        record.creation_date_time = fieldSetFlags()[11] ? this.creation_date_time : (java.lang.CharSequence) defaultValue(fields()[11]);
+        record.creation_date_time = fieldSetFlags()[11] ? this.creation_date_time : (java.lang.Long) defaultValue(fields()[11]);
         record.marketplace_order_number = fieldSetFlags()[12] ? this.marketplace_order_number : (java.lang.Integer) defaultValue(fields()[12]);
         record.tenant_admin_email = fieldSetFlags()[13] ? this.tenant_admin_email : (java.lang.CharSequence) defaultValue(fields()[13]);
         record.purchaser_name = fieldSetFlags()[14] ? this.purchaser_name : (java.lang.CharSequence) defaultValue(fields()[14]);

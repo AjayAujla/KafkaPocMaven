@@ -14,7 +14,7 @@
     {"name": "customer_id", "type": "string"},
     {"name": "sales_agent_customer_id", "type": "string"},
     {"name": "tenant_domain", "type": "string"},
-    {"name": "creation_date_time", "type": "string"},
+    {"name": "creation_date_time", "type": "long", "logicalType": "timestamp-millis"},
     {"name": "marketplace_order_number", "type": "int"},
     {"name": "tenant_admin_email", "type": "string"},
     {"name": "purchaser_name", "type": "string"}
