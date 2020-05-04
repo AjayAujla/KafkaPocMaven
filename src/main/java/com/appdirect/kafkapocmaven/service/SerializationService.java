@@ -37,15 +37,7 @@ public class SerializationService {
     }
 
 
-    public MicrosoftTenantEvent deserializeMicrosoftTenantEvent(final byte[] payload) {
-        return deserialize(payload, MicrosoftTenantEvent.class);
-    }
-
-    public CspTokenEvent deserializeCspTokenEvent(final byte[] payload) {
-        return deserialize(payload, CspTokenEvent.class);
-    }
-
-    private <T> T deserialize(final byte[] payload, final Class<T> clazz) {
+    public <T> T deserialize(final byte[] payload, final Class<T> clazz) {
         final DatumReader<T> reader = new SpecificDatumReader<>(clazz);
         try {
             final Decoder decoder = DecoderFactory.get().binaryDecoder(payload, null);

@@ -20,7 +20,7 @@ public class SubscriberComponent {
     @StreamListener(Bindings.KAFKA_POC_MAVEN_TOPIC)
     public void subscribe(final byte[] body) {
 //        final MicrosoftTenantEvent event = serializationService.deserializeMicrosoftTenantEvent(body);
-        final CspTokenEvent event = serializationService.deserializeCspTokenEvent(body);
+        final CspTokenEvent event = serializationService.deserialize(body, CspTokenEvent.class);
         log.info("AJAY Received event={}", event);
     }
 }
