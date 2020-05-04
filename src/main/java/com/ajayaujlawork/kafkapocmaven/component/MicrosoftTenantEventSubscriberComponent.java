@@ -1,4 +1,4 @@
-package com.appdirect.kafkapocmaven.component;
+package com.ajayaujlawork.kafkapocmaven.component;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -6,9 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.stream.annotation.StreamListener;
 import org.springframework.stereotype.Component;
 
-import com.appdirect.kafkapocmaven.model.MicrosoftTenantEvent;
-import com.appdirect.kafkapocmaven.model.MicrosoftTenantEventBindings;
-import com.appdirect.kafkapocmaven.service.SerializationService;
+import com.ajayaujlawork.kafkapocmaven.model.MicrosoftTenantEventBindings;
+import com.ajayaujlawork.kafkapocmaven.service.SerializationService;
+import com.ajayaujlawork.kafkapocmaven.model.MicrosoftTenantEvent;
 
 @Slf4j
 @Component

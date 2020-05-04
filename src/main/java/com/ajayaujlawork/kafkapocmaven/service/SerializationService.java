@@ -1,4 +1,4 @@
-package com.appdirect.kafkapocmaven.service;
+package com.ajayaujlawork.kafkapocmaven.service;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;

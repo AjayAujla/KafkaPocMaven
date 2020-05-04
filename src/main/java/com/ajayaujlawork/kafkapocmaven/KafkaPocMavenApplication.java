@@ -1,11 +1,11 @@
-package com.appdirect.kafkapocmaven;
+package com.ajayaujlawork.kafkapocmaven;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.stream.annotation.EnableBinding;
 
-import com.appdirect.kafkapocmaven.model.CspTokenEventBindings;
-import com.appdirect.kafkapocmaven.model.MicrosoftTenantEventBindings;
+import com.ajayaujlawork.kafkapocmaven.model.CspTokenEventBindings;
+import com.ajayaujlawork.kafkapocmaven.model.MicrosoftTenantEventBindings;
 
 @SpringBootApplication
 @EnableBinding({CspTokenEventBindings.class, MicrosoftTenantEventBindings.class})

@@ -1,4 +1,4 @@
-package com.appdirect.kafkapocmaven.controller;
+package com.ajayaujlawork.kafkapocmaven.controller;
 
 import java.util.Date;
 
@@ -13,13 +13,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.appdirect.kafkapocmaven.model.CspTokenEvent;
-import com.appdirect.kafkapocmaven.model.CspTokenEventBindings;
-import com.appdirect.kafkapocmaven.model.CspTokenEventType;
-import com.appdirect.kafkapocmaven.model.MicrosoftTenantEvent;
-import com.appdirect.kafkapocmaven.model.MicrosoftTenantEventBindings;
-import com.appdirect.kafkapocmaven.model.MicrosoftTenantEventType;
-import com.appdirect.kafkapocmaven.service.SerializationService;
+import com.ajayaujlawork.kafkapocmaven.model.CspTokenEvent;
+import com.ajayaujlawork.kafkapocmaven.model.CspTokenEventType;
+import com.ajayaujlawork.kafkapocmaven.service.SerializationService;
+import com.ajayaujlawork.kafkapocmaven.model.CspTokenEventBindings;
+import com.ajayaujlawork.kafkapocmaven.model.MicrosoftTenantEvent;
+import com.ajayaujlawork.kafkapocmaven.model.MicrosoftTenantEventBindings;
+import com.ajayaujlawork.kafkapocmaven.model.MicrosoftTenantEventType;
 
 @Slf4j
 @RestController

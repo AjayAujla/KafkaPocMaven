@@ -1,7 +1,7 @@
 {
   "type":"record",
   "name":"MicrosoftTenantEvent",
-  "namespace":"com.appdirect.kafkapocmaven.model",
+  "namespace":"com.ajayaujlawork.kafkapocmaven.model",
   "fields":[
     {"name": "user_id", "type": "string"},
     {"name": "sales_agent_user_id", "type": "string"},

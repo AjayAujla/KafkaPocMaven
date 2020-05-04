@@ -1,7 +1,7 @@
 {
   "type":"record",
   "name":"CspTokenEvent",
-  "namespace":"com.appdirect.kafkapocmaven.model",
+  "namespace":"com.ajayaujlawork.kafkapocmaven.model",
   "fields":[
     {"name": "creation_date_time", "type": "long", "logicalType": "timestamp-millis"},
     {"name": "expiration_date_time", "type": "long", "logicalType": "timestamp-millis"},

@@ -3,7 +3,7 @@
  *
  * DO NOT EDIT DIRECTLY
  */
-package com.appdirect.kafkapocmaven.model;
+package com.ajayaujlawork.kafkapocmaven.model;
 
 import org.apache.avro.specific.SpecificData;
 import org.apache.avro.message.BinaryMessageEncoder;
@@ -14,7 +14,7 @@ import org.apache.avro.message.SchemaStore;
 @org.apache.avro.specific.AvroGenerated
 public class MicrosoftTenantEvent extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   private static final long serialVersionUID = -8259991170113830136L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"MicrosoftTenantEvent\",\"namespace\":\"com.appdirect.kafkapocmaven.model\",\"fields\":[{\"name\":\"user_id\",\"type\":\"string\"},{\"name\":\"sales_agent_user_id\",\"type\":\"string\"},{\"name\":\"partner\",\"type\":\"string\"},{\"name\":\"sku\",\"type\":\"string\"},{\"name\":\"event_type\",\"type\":[\"null\",{\"type\":\"enum\",\"name\":\"MicrosoftTenantEventType\",\"symbols\":[\"CREATED\"]}]},{\"name\":\"company_id\",\"type\":\"string\"},{\"name\":\"external_company_id\",\"type\":\"string\"},{\"name\":\"batch_id\",\"type\":\"string\"},{\"name\":\"customer_id\",\"type\":\"string\"},{\"name\":\"sales_agent_customer_id\",\"type\":\"string\"},{\"name\":\"tenant_domain\",\"type\":\"string\"},{\"name\":\"creation_date_time\",\"type\":\"long\",\"logicalType\":\"timestamp-millis\"},{\"name\":\"marketplace_order_number\",\"type\":\"int\"},{\"name\":\"tenant_admin_email\",\"type\":\"string\"},{\"name\":\"purchaser_name\",\"type\":\"string\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"MicrosoftTenantEvent\",\"namespace\":\"com.ajayaujlawork.kafkapocmaven.model\",\"fields\":[{\"name\":\"user_id\",\"type\":\"string\"},{\"name\":\"sales_agent_user_id\",\"type\":\"string\"},{\"name\":\"partner\",\"type\":\"string\"},{\"name\":\"sku\",\"type\":\"string\"},{\"name\":\"event_type\",\"type\":[\"null\",{\"type\":\"enum\",\"name\":\"MicrosoftTenantEventType\",\"symbols\":[\"CREATED\"]}]},{\"name\":\"company_id\",\"type\":\"string\"},{\"name\":\"external_company_id\",\"type\":\"string\"},{\"name\":\"batch_id\",\"type\":\"string\"},{\"name\":\"customer_id\",\"type\":\"string\"},{\"name\":\"sales_agent_customer_id\",\"type\":\"string\"},{\"name\":\"tenant_domain\",\"type\":\"string\"},{\"name\":\"creation_date_time\",\"type\":\"long\",\"logicalType\":\"timestamp-millis\"},{\"name\":\"marketplace_order_number\",\"type\":\"int\"},{\"name\":\"tenant_admin_email\",\"type\":\"string\"},{\"name\":\"purchaser_name\",\"type\":\"string\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
@@ -55,7 +55,7 @@ public class MicrosoftTenantEvent extends org.apache.avro.specific.SpecificRecor
   @Deprecated public java.lang.CharSequence sales_agent_user_id;
   @Deprecated public java.lang.CharSequence partner;
   @Deprecated public java.lang.CharSequence sku;
-  @Deprecated public com.appdirect.kafkapocmaven.model.MicrosoftTenantEventType event_type;
+  @Deprecated public MicrosoftTenantEventType event_type;
   @Deprecated public java.lang.CharSequence company_id;
   @Deprecated public java.lang.CharSequence external_company_id;
   @Deprecated public java.lang.CharSequence batch_id;
@@ -92,7 +92,7 @@ public class MicrosoftTenantEvent extends org.apache.avro.specific.SpecificRecor
    * @param tenant_admin_email The new value for tenant_admin_email
    * @param purchaser_name The new value for purchaser_name
    */
-  public MicrosoftTenantEvent(java.lang.CharSequence user_id, java.lang.CharSequence sales_agent_user_id, java.lang.CharSequence partner, java.lang.CharSequence sku, com.appdirect.kafkapocmaven.model.MicrosoftTenantEventType event_type, java.lang.CharSequence company_id, java.lang.CharSequence external_company_id, java.lang.CharSequence batch_id, java.lang.CharSequence customer_id, java.lang.CharSequence sales_agent_customer_id, java.lang.CharSequence tenant_domain, java.lang.Long creation_date_time, java.lang.Integer marketplace_order_number, java.lang.CharSequence tenant_admin_email, java.lang.CharSequence purchaser_name) {
+  public MicrosoftTenantEvent(java.lang.CharSequence user_id, java.lang.CharSequence sales_agent_user_id, java.lang.CharSequence partner, java.lang.CharSequence sku, MicrosoftTenantEventType event_type, java.lang.CharSequence company_id, java.lang.CharSequence external_company_id, java.lang.CharSequence batch_id, java.lang.CharSequence customer_id, java.lang.CharSequence sales_agent_customer_id, java.lang.CharSequence tenant_domain, java.lang.Long creation_date_time, java.lang.Integer marketplace_order_number, java.lang.CharSequence tenant_admin_email, java.lang.CharSequence purchaser_name) {
     this.user_id = user_id;
     this.sales_agent_user_id = sales_agent_user_id;
     this.partner = partner;
@@ -141,7 +141,7 @@ public class MicrosoftTenantEvent extends org.apache.avro.specific.SpecificRecor
     case 1: sales_agent_user_id = (java.lang.CharSequence)value$; break;
     case 2: partner = (java.lang.CharSequence)value$; break;
     case 3: sku = (java.lang.CharSequence)value$; break;
-    case 4: event_type = (com.appdirect.kafkapocmaven.model.MicrosoftTenantEventType)value$; break;
+    case 4: event_type = (MicrosoftTenantEventType)value$; break;
     case 5: company_id = (java.lang.CharSequence)value$; break;
     case 6: external_company_id = (java.lang.CharSequence)value$; break;
     case 7: batch_id = (java.lang.CharSequence)value$; break;
@@ -224,7 +224,7 @@ public class MicrosoftTenantEvent extends org.apache.avro.specific.SpecificRecor
    * Gets the value of the 'event_type' field.
    * @return The value of the 'event_type' field.
    */
-  public com.appdirect.kafkapocmaven.model.MicrosoftTenantEventType getEventType() {
+  public MicrosoftTenantEventType getEventType() {
     return event_type;
   }
 
@@ -232,7 +232,7 @@ public class MicrosoftTenantEvent extends org.apache.avro.specific.SpecificRecor
    * Sets the value of the 'event_type' field.
    * @param value the value to set.
    */
-  public void setEventType(com.appdirect.kafkapocmaven.model.MicrosoftTenantEventType value) {
+  public void setEventType(MicrosoftTenantEventType value) {
     this.event_type = value;
   }
 
@@ -400,8 +400,8 @@ public class MicrosoftTenantEvent extends org.apache.avro.specific.SpecificRecor
    * Creates a new MicrosoftTenantEvent RecordBuilder.
    * @return A new MicrosoftTenantEvent RecordBuilder
    */
-  public static com.appdirect.kafkapocmaven.model.MicrosoftTenantEvent.Builder newBuilder() {
-    return new com.appdirect.kafkapocmaven.model.MicrosoftTenantEvent.Builder();
+  public static MicrosoftTenantEvent.Builder newBuilder() {
+    return new MicrosoftTenantEvent.Builder();
   }
 
   /**
@@ -409,8 +409,8 @@ public class MicrosoftTenantEvent extends org.apache.avro.specific.SpecificRecor
    * @param other The existing builder to copy.
    * @return A new MicrosoftTenantEvent RecordBuilder
    */
-  public static com.appdirect.kafkapocmaven.model.MicrosoftTenantEvent.Builder newBuilder(com.appdirect.kafkapocmaven.model.MicrosoftTenantEvent.Builder other) {
-    return new com.appdirect.kafkapocmaven.model.MicrosoftTenantEvent.Builder(other);
+  public static MicrosoftTenantEvent.Builder newBuilder(MicrosoftTenantEvent.Builder other) {
+    return new MicrosoftTenantEvent.Builder(other);
   }
 
   /**
@@ -418,8 +418,8 @@ public class MicrosoftTenantEvent extends org.apache.avro.specific.SpecificRecor
    * @param other The existing instance to copy.
    * @return A new MicrosoftTenantEvent RecordBuilder
    */
-  public static com.appdirect.kafkapocmaven.model.MicrosoftTenantEvent.Builder newBuilder(com.appdirect.kafkapocmaven.model.MicrosoftTenantEvent other) {
-    return new com.appdirect.kafkapocmaven.model.MicrosoftTenantEvent.Builder(other);
+  public static MicrosoftTenantEvent.Builder newBuilder(MicrosoftTenantEvent other) {
+    return new MicrosoftTenantEvent.Builder(other);
   }
 
   /**
@@ -432,7 +432,7 @@ public class MicrosoftTenantEvent extends org.apache.avro.specific.SpecificRecor
     private java.lang.CharSequence sales_agent_user_id;
     private java.lang.CharSequence partner;
     private java.lang.CharSequence sku;
-    private com.appdirect.kafkapocmaven.model.MicrosoftTenantEventType event_type;
+    private MicrosoftTenantEventType event_type;
     private java.lang.CharSequence company_id;
     private java.lang.CharSequence external_company_id;
     private java.lang.CharSequence batch_id;
@@ -453,7 +453,7 @@ public class MicrosoftTenantEvent extends org.apache.avro.specific.SpecificRecor
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(com.appdirect.kafkapocmaven.model.MicrosoftTenantEvent.Builder other) {
+    private Builder(MicrosoftTenantEvent.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.user_id)) {
         this.user_id = data().deepCopy(fields()[0].schema(), other.user_id);
@@ -521,7 +521,7 @@ public class MicrosoftTenantEvent extends org.apache.avro.specific.SpecificRecor
      * Creates a Builder by copying an existing MicrosoftTenantEvent instance
      * @param other The existing instance to copy.
      */
-    private Builder(com.appdirect.kafkapocmaven.model.MicrosoftTenantEvent other) {
+    private Builder(MicrosoftTenantEvent other) {
             super(SCHEMA$);
       if (isValidValue(fields()[0], other.user_id)) {
         this.user_id = data().deepCopy(fields()[0].schema(), other.user_id);
@@ -598,7 +598,7 @@ public class MicrosoftTenantEvent extends org.apache.avro.specific.SpecificRecor
       * @param value The value of 'user_id'.
       * @return This builder.
       */
-    public com.appdirect.kafkapocmaven.model.MicrosoftTenantEvent.Builder setUserId(java.lang.CharSequence value) {
+    public MicrosoftTenantEvent.Builder setUserId(java.lang.CharSequence value) {
       validate(fields()[0], value);
       this.user_id = value;
       fieldSetFlags()[0] = true;
@@ -618,7 +618,7 @@ public class MicrosoftTenantEvent extends org.apache.avro.specific.SpecificRecor
       * Clears the value of the 'user_id' field.
       * @return This builder.
       */
-    public com.appdirect.kafkapocmaven.model.MicrosoftTenantEvent.Builder clearUserId() {
+    public MicrosoftTenantEvent.Builder clearUserId() {
       user_id = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -637,7 +637,7 @@ public class MicrosoftTenantEvent extends org.apache.avro.specific.SpecificRecor
       * @param value The value of 'sales_agent_user_id'.
       * @return This builder.
       */
-    public com.appdirect.kafkapocmaven.model.MicrosoftTenantEvent.Builder setSalesAgentUserId(java.lang.CharSequence value) {
+    public MicrosoftTenantEvent.Builder setSalesAgentUserId(java.lang.CharSequence value) {
       validate(fields()[1], value);
       this.sales_agent_user_id = value;
       fieldSetFlags()[1] = true;
@@ -657,7 +657,7 @@ public class MicrosoftTenantEvent extends org.apache.avro.specific.SpecificRecor
       * Clears the value of the 'sales_agent_user_id' field.
       * @return This builder.
       */
-    public com.appdirect.kafkapocmaven.model.MicrosoftTenantEvent.Builder clearSalesAgentUserId() {
+    public MicrosoftTenantEvent.Builder clearSalesAgentUserId() {
       sales_agent_user_id = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -676,7 +676,7 @@ public class MicrosoftTenantEvent extends org.apache.avro.specific.SpecificRecor
       * @param value The value of 'partner'.
       * @return This builder.
       */
-    public com.appdirect.kafkapocmaven.model.MicrosoftTenantEvent.Builder setPartner(java.lang.CharSequence value) {
+    public MicrosoftTenantEvent.Builder setPartner(java.lang.CharSequence value) {
       validate(fields()[2], value);
       this.partner = value;
       fieldSetFlags()[2] = true;
@@ -696,7 +696,7 @@ public class MicrosoftTenantEvent extends org.apache.avro.specific.SpecificRecor
       * Clears the value of the 'partner' field.
       * @return This builder.
       */
-    public com.appdirect.kafkapocmaven.model.MicrosoftTenantEvent.Builder clearPartner() {
+    public MicrosoftTenantEvent.Builder clearPartner() {
       partner = null;
       fieldSetFlags()[2] = false;
       return this;
@@ -715,7 +715,7 @@ public class MicrosoftTenantEvent extends org.apache.avro.specific.SpecificRecor
       * @param value The value of 'sku'.
       * @return This builder.
       */
-    public com.appdirect.kafkapocmaven.model.MicrosoftTenantEvent.Builder setSku(java.lang.CharSequence value) {
+    public MicrosoftTenantEvent.Builder setSku(java.lang.CharSequence value) {
       validate(fields()[3], value);
       this.sku = value;
       fieldSetFlags()[3] = true;
@@ -735,7 +735,7 @@ public class MicrosoftTenantEvent extends org.apache.avro.specific.SpecificRecor
       * Clears the value of the 'sku' field.
       * @return This builder.
       */
-    public com.appdirect.kafkapocmaven.model.MicrosoftTenantEvent.Builder clearSku() {
+    public MicrosoftTenantEvent.Builder clearSku() {
       sku = null;
       fieldSetFlags()[3] = false;
       return this;
@@ -745,7 +745,7 @@ public class MicrosoftTenantEvent extends org.apache.avro.specific.SpecificRecor
       * Gets the value of the 'event_type' field.
       * @return The value.
       */
-    public com.appdirect.kafkapocmaven.model.MicrosoftTenantEventType getEventType() {
+    public MicrosoftTenantEventType getEventType() {
       return event_type;
     }
 
@@ -754,7 +754,7 @@ public class MicrosoftTenantEvent extends org.apache.avro.specific.SpecificRecor
       * @param value The value of 'event_type'.
       * @return This builder.
       */
-    public com.appdirect.kafkapocmaven.model.MicrosoftTenantEvent.Builder setEventType(com.appdirect.kafkapocmaven.model.MicrosoftTenantEventType value) {
+    public MicrosoftTenantEvent.Builder setEventType(MicrosoftTenantEventType value) {
       validate(fields()[4], value);
       this.event_type = value;
       fieldSetFlags()[4] = true;
@@ -774,7 +774,7 @@ public class MicrosoftTenantEvent extends org.apache.avro.specific.SpecificRecor
       * Clears the value of the 'event_type' field.
       * @return This builder.
       */
-    public com.appdirect.kafkapocmaven.model.MicrosoftTenantEvent.Builder clearEventType() {
+    public MicrosoftTenantEvent.Builder clearEventType() {
       event_type = null;
       fieldSetFlags()[4] = false;
       return this;
@@ -793,7 +793,7 @@ public class MicrosoftTenantEvent extends org.apache.avro.specific.SpecificRecor
       * @param value The value of 'company_id'.
       * @return This builder.
       */
-    public com.appdirect.kafkapocmaven.model.MicrosoftTenantEvent.Builder setCompanyId(java.lang.CharSequence value) {
+    public MicrosoftTenantEvent.Builder setCompanyId(java.lang.CharSequence value) {
       validate(fields()[5], value);
       this.company_id = value;
       fieldSetFlags()[5] = true;
@@ -813,7 +813,7 @@ public class MicrosoftTenantEvent extends org.apache.avro.specific.SpecificRecor
       * Clears the value of the 'company_id' field.
       * @return This builder.
       */
-    public com.appdirect.kafkapocmaven.model.MicrosoftTenantEvent.Builder clearCompanyId() {
+    public MicrosoftTenantEvent.Builder clearCompanyId() {
       company_id = null;
       fieldSetFlags()[5] = false;
       return this;
@@ -832,7 +832,7 @@ public class MicrosoftTenantEvent extends org.apache.avro.specific.SpecificRecor
       * @param value The value of 'external_company_id'.
       * @return This builder.
       */
-    public com.appdirect.kafkapocmaven.model.MicrosoftTenantEvent.Builder setExternalCompanyId(java.lang.CharSequence value) {
+    public MicrosoftTenantEvent.Builder setExternalCompanyId(java.lang.CharSequence value) {
       validate(fields()[6], value);
       this.external_company_id = value;
       fieldSetFlags()[6] = true;
@@ -852,7 +852,7 @@ public class MicrosoftTenantEvent extends org.apache.avro.specific.SpecificRecor
       * Clears the value of the 'external_company_id' field.
       * @return This builder.
       */
-    public com.appdirect.kafkapocmaven.model.MicrosoftTenantEvent.Builder clearExternalCompanyId() {
+    public MicrosoftTenantEvent.Builder clearExternalCompanyId() {
       external_company_id = null;
       fieldSetFlags()[6] = false;
       return this;
@@ -871,7 +871,7 @@ public class MicrosoftTenantEvent extends org.apache.avro.specific.SpecificRecor
       * @param value The value of 'batch_id'.
       * @return This builder.
       */
-    public com.appdirect.kafkapocmaven.model.MicrosoftTenantEvent.Builder setBatchId(java.lang.CharSequence value) {
+    public MicrosoftTenantEvent.Builder setBatchId(java.lang.CharSequence value) {
       validate(fields()[7], value);
       this.batch_id = value;
       fieldSetFlags()[7] = true;
@@ -891,7 +891,7 @@ public class MicrosoftTenantEvent extends org.apache.avro.specific.SpecificRecor
       * Clears the value of the 'batch_id' field.
       * @return This builder.
       */
-    public com.appdirect.kafkapocmaven.model.MicrosoftTenantEvent.Builder clearBatchId() {
+    public MicrosoftTenantEvent.Builder clearBatchId() {
       batch_id = null;
       fieldSetFlags()[7] = false;
       return this;
@@ -910,7 +910,7 @@ public class MicrosoftTenantEvent extends org.apache.avro.specific.SpecificRecor
       * @param value The value of 'customer_id'.
       * @return This builder.
       */
-    public com.appdirect.kafkapocmaven.model.MicrosoftTenantEvent.Builder setCustomerId(java.lang.CharSequence value) {
+    public MicrosoftTenantEvent.Builder setCustomerId(java.lang.CharSequence value) {
       validate(fields()[8], value);
       this.customer_id = value;
       fieldSetFlags()[8] = true;
@@ -930,7 +930,7 @@ public class MicrosoftTenantEvent extends org.apache.avro.specific.SpecificRecor
       * Clears the value of the 'customer_id' field.
       * @return This builder.
       */
-    public com.appdirect.kafkapocmaven.model.MicrosoftTenantEvent.Builder clearCustomerId() {
+    public MicrosoftTenantEvent.Builder clearCustomerId() {
       customer_id = null;
       fieldSetFlags()[8] = false;
       return this;
@@ -949,7 +949,7 @@ public class MicrosoftTenantEvent extends org.apache.avro.specific.SpecificRecor
       * @param value The value of 'sales_agent_customer_id'.
       * @return This builder.
       */
-    public com.appdirect.kafkapocmaven.model.MicrosoftTenantEvent.Builder setSalesAgentCustomerId(java.lang.CharSequence value) {
+    public MicrosoftTenantEvent.Builder setSalesAgentCustomerId(java.lang.CharSequence value) {
       validate(fields()[9], value);
       this.sales_agent_customer_id = value;
       fieldSetFlags()[9] = true;
@@ -969,7 +969,7 @@ public class MicrosoftTenantEvent extends org.apache.avro.specific.SpecificRecor
       * Clears the value of the 'sales_agent_customer_id' field.
       * @return This builder.
       */
-    public com.appdirect.kafkapocmaven.model.MicrosoftTenantEvent.Builder clearSalesAgentCustomerId() {
+    public MicrosoftTenantEvent.Builder clearSalesAgentCustomerId() {
       sales_agent_customer_id = null;
       fieldSetFlags()[9] = false;
       return this;
@@ -988,7 +988,7 @@ public class MicrosoftTenantEvent extends org.apache.avro.specific.SpecificRecor
       * @param value The value of 'tenant_domain'.
       * @return This builder.
       */
-    public com.appdirect.kafkapocmaven.model.MicrosoftTenantEvent.Builder setTenantDomain(java.lang.CharSequence value) {
+    public MicrosoftTenantEvent.Builder setTenantDomain(java.lang.CharSequence value) {
       validate(fields()[10], value);
       this.tenant_domain = value;
       fieldSetFlags()[10] = true;
@@ -1008,7 +1008,7 @@ public class MicrosoftTenantEvent extends org.apache.avro.specific.SpecificRecor
       * Clears the value of the 'tenant_domain' field.
       * @return This builder.
       */
-    public com.appdirect.kafkapocmaven.model.MicrosoftTenantEvent.Builder clearTenantDomain() {
+    public MicrosoftTenantEvent.Builder clearTenantDomain() {
       tenant_domain = null;
       fieldSetFlags()[10] = false;
       return this;
@@ -1027,7 +1027,7 @@ public class MicrosoftTenantEvent extends org.apache.avro.specific.SpecificRecor
       * @param value The value of 'creation_date_time'.
       * @return This builder.
       */
-    public com.appdirect.kafkapocmaven.model.MicrosoftTenantEvent.Builder setCreationDateTime(long value) {
+    public MicrosoftTenantEvent.Builder setCreationDateTime(long value) {
       validate(fields()[11], value);
       this.creation_date_time = value;
       fieldSetFlags()[11] = true;
@@ -1047,7 +1047,7 @@ public class MicrosoftTenantEvent extends org.apache.avro.specific.SpecificRecor
       * Clears the value of the 'creation_date_time' field.
       * @return This builder.
       */
-    public com.appdirect.kafkapocmaven.model.MicrosoftTenantEvent.Builder clearCreationDateTime() {
+    public MicrosoftTenantEvent.Builder clearCreationDateTime() {
       fieldSetFlags()[11] = false;
       return this;
     }
@@ -1065,7 +1065,7 @@ public class MicrosoftTenantEvent extends org.apache.avro.specific.SpecificRecor
       * @param value The value of 'marketplace_order_number'.
       * @return This builder.
       */
-    public com.appdirect.kafkapocmaven.model.MicrosoftTenantEvent.Builder setMarketplaceOrderNumber(int value) {
+    public MicrosoftTenantEvent.Builder setMarketplaceOrderNumber(int value) {
       validate(fields()[12], value);
       this.marketplace_order_number = value;
       fieldSetFlags()[12] = true;
@@ -1085,7 +1085,7 @@ public class MicrosoftTenantEvent extends org.apache.avro.specific.SpecificRecor
       * Clears the value of the 'marketplace_order_number' field.
       * @return This builder.
       */
-    public com.appdirect.kafkapocmaven.model.MicrosoftTenantEvent.Builder clearMarketplaceOrderNumber() {
+    public MicrosoftTenantEvent.Builder clearMarketplaceOrderNumber() {
       fieldSetFlags()[12] = false;
       return this;
     }
@@ -1103,7 +1103,7 @@ public class MicrosoftTenantEvent extends org.apache.avro.specific.SpecificRecor
       * @param value The value of 'tenant_admin_email'.
       * @return This builder.
       */
-    public com.appdirect.kafkapocmaven.model.MicrosoftTenantEvent.Builder setTenantAdminEmail(java.lang.CharSequence value) {
+    public MicrosoftTenantEvent.Builder setTenantAdminEmail(java.lang.CharSequence value) {
       validate(fields()[13], value);
       this.tenant_admin_email = value;
       fieldSetFlags()[13] = true;
@@ -1123,7 +1123,7 @@ public class MicrosoftTenantEvent extends org.apache.avro.specific.SpecificRecor
       * Clears the value of the 'tenant_admin_email' field.
       * @return This builder.
       */
-    public com.appdirect.kafkapocmaven.model.MicrosoftTenantEvent.Builder clearTenantAdminEmail() {
+    public MicrosoftTenantEvent.Builder clearTenantAdminEmail() {
       tenant_admin_email = null;
       fieldSetFlags()[13] = false;
       return this;
@@ -1142,7 +1142,7 @@ public class MicrosoftTenantEvent extends org.apache.avro.specific.SpecificRecor
       * @param value The value of 'purchaser_name'.
       * @return This builder.
       */
-    public com.appdirect.kafkapocmaven.model.MicrosoftTenantEvent.Builder setPurchaserName(java.lang.CharSequence value) {
+    public MicrosoftTenantEvent.Builder setPurchaserName(java.lang.CharSequence value) {
       validate(fields()[14], value);
       this.purchaser_name = value;
       fieldSetFlags()[14] = true;
@@ -1162,7 +1162,7 @@ public class MicrosoftTenantEvent extends org.apache.avro.specific.SpecificRecor
       * Clears the value of the 'purchaser_name' field.
       * @return This builder.
       */
-    public com.appdirect.kafkapocmaven.model.MicrosoftTenantEvent.Builder clearPurchaserName() {
+    public MicrosoftTenantEvent.Builder clearPurchaserName() {
       purchaser_name = null;
       fieldSetFlags()[14] = false;
       return this;
@@ -1177,7 +1177,7 @@ public class MicrosoftTenantEvent extends org.apache.avro.specific.SpecificRecor
         record.sales_agent_user_id = fieldSetFlags()[1] ? this.sales_agent_user_id : (java.lang.CharSequence) defaultValue(fields()[1]);
         record.partner = fieldSetFlags()[2] ? this.partner : (java.lang.CharSequence) defaultValue(fields()[2]);
         record.sku = fieldSetFlags()[3] ? this.sku : (java.lang.CharSequence) defaultValue(fields()[3]);
-        record.event_type = fieldSetFlags()[4] ? this.event_type : (com.appdirect.kafkapocmaven.model.MicrosoftTenantEventType) defaultValue(fields()[4]);
+        record.event_type = fieldSetFlags()[4] ? this.event_type : (MicrosoftTenantEventType) defaultValue(fields()[4]);
         record.company_id = fieldSetFlags()[5] ? this.company_id : (java.lang.CharSequence) defaultValue(fields()[5]);
         record.external_company_id = fieldSetFlags()[6] ? this.external_company_id : (java.lang.CharSequence) defaultValue(fields()[6]);
         record.batch_id = fieldSetFlags()[7] ? this.batch_id : (java.lang.CharSequence) defaultValue(fields()[7]);

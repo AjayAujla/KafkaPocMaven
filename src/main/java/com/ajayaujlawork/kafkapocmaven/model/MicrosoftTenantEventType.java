@@ -3,11 +3,11 @@
  *
  * DO NOT EDIT DIRECTLY
  */
-package com.appdirect.kafkapocmaven.model;
+package com.ajayaujlawork.kafkapocmaven.model;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public enum MicrosoftTenantEventType {
   CREATED  ;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"enum\",\"name\":\"MicrosoftTenantEventType\",\"namespace\":\"com.appdirect.kafkapocmaven.model\",\"symbols\":[\"CREATED\"]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"enum\",\"name\":\"MicrosoftTenantEventType\",\"namespace\":\"com.ajayaujlawork.kafkapocmaven.model\",\"symbols\":[\"CREATED\"]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 }

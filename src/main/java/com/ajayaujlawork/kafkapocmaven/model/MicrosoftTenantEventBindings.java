@@ -1,4 +1,4 @@
-package com.appdirect.kafkapocmaven.model;
+package com.ajayaujlawork.kafkapocmaven.model;
 
 import org.springframework.cloud.stream.annotation.Input;
 import org.springframework.cloud.stream.annotation.Output;
