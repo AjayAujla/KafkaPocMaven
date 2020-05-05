@@ -13,13 +13,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ajayaujlawork.kafkapocmaven.model.CspTokenEvent;
-import com.ajayaujlawork.kafkapocmaven.model.CspTokenEventType;
-import com.ajayaujlawork.kafkapocmaven.service.SerializationService;
-import com.ajayaujlawork.kafkapocmaven.model.CspTokenEventBindings;
 import com.ajayaujlawork.kafkapocmaven.model.MicrosoftTenantEvent;
-import com.ajayaujlawork.kafkapocmaven.model.MicrosoftTenantEventBindings;
+import com.ajayaujlawork.kafkapocmaven.binding.MicrosoftTenantEventBinding;
 import com.ajayaujlawork.kafkapocmaven.model.MicrosoftTenantEventType;
+import com.ajayaujlawork.kafkapocmaven.model.MicrosoftTokenEvent;
+import com.ajayaujlawork.kafkapocmaven.binding.MicrosoftTokenEventBinding;
+import com.ajayaujlawork.kafkapocmaven.model.MicrosoftTokenEventType;
+import com.ajayaujlawork.kafkapocmaven.service.SerializationService;
 
 @Slf4j
 @RestController
@@ -27,15 +27,15 @@ import com.ajayaujlawork.kafkapocmaven.model.MicrosoftTenantEventType;
 public class PublisherController {
 
     @Autowired
-    private CspTokenEventBindings cspTokenEventBindings;
+    private MicrosoftTokenEventBinding microsoftTokenEventBinding;
 
     @Autowired
-    private MicrosoftTenantEventBindings microsoftTenantEventBindings;
+    private MicrosoftTenantEventBinding microsoftTenantEventBinding;
 
     @Autowired
     private SerializationService serializationService;
 
-    @PostMapping("/1")
+    @PostMapping("/tenant")
     public ResponseEntity publish1() {
         final MicrosoftTenantEvent event = MicrosoftTenantEvent.newBuilder()
                 .setUserId("userId")
@@ -58,31 +58,31 @@ public class PublisherController {
         final Message<byte[]> message = MessageBuilder.withPayload(serialized).build();
 
         log.info("AJAY Publishing MicrosoftTenantEvent={}", event);
-        microsoftTenantEventBindings.output().send(message);
+        microsoftTenantEventBinding.output().send(message);
 
         return ResponseEntity.noContent().build();
     }
 
-    @PostMapping("/2")
+    @PostMapping("/token")
     public ResponseEntity publish2() {
-        final CspTokenEvent event = CspTokenEvent.newBuilder()
+        final MicrosoftTokenEvent event = MicrosoftTokenEvent.newBuilder()
                 .setCreationDateTime(new Date().getTime())
                 .setExpirationDateTime(new Date().getTime())
                 .setAuthorizer("authorizer")
                 .setTenantDomain("tenantDomain")
-                .setEventType(CspTokenEventType.CREATED)
+                .setEventType(MicrosoftTokenEventType.CREATED)
                 .build();
-        final byte[] serialized = serializationService.serialize(event, CspTokenEvent.class);
+        final byte[] serialized = serializationService.serialize(event, MicrosoftTokenEvent.class);
         final Message<byte[]> message = MessageBuilder.withPayload(serialized).build();
 
-        log.info("AJAY Publishing CspTokenEvent={}", event);
-        cspTokenEventBindings.output().send(message);
+        log.info("AJAY Publishing MicrosoftTokenEvent={}", event);
+        microsoftTokenEventBinding.output().send(message);
 
         return ResponseEntity.noContent().build();
     }
 
     @GetMapping
-    public ResponseEntity<String> pingo() {
-        return ResponseEntity.ok("pongo");
+    public ResponseEntity<String> ping() {
+        return ResponseEntity.ok("pong");
     }
 }

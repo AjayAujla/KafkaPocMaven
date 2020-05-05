@@ -1,16 +1,16 @@
-package com.ajayaujlawork.kafkapocmaven.model;
+package com.ajayaujlawork.kafkapocmaven.binding;
 
 import org.springframework.cloud.stream.annotation.Input;
 import org.springframework.cloud.stream.annotation.Output;
 import org.springframework.messaging.MessageChannel;
 
-public interface CspTokenEventBindings {
+public interface MicrosoftTenantEventBinding {
 
-    String TOPIC_CSP_TOKEN_EVENT = "Topic-CspTokenEvent";
+    String MICROSOFT_TENANT_TOPIC = "microsoft-tenant";
 
-    @Input(TOPIC_CSP_TOKEN_EVENT)
+    @Input(MICROSOFT_TENANT_TOPIC)
     MessageChannel input();
 
-    @Output(TOPIC_CSP_TOKEN_EVENT)
+    @Output(MICROSOFT_TENANT_TOPIC)
     MessageChannel output();
 }

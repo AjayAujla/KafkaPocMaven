@@ -9,11 +9,11 @@ spring:
         consumer:
           useNativeEncoding: true
       bindings:
-        Topic-MicrosoftTenantEvent:
-          destination: TOPIC.MICROSOFT.TENANT.EVENT
+        microsoft-tenant:
+          destination: microsoft.tenant
           content-type: application/*+avro
-        Topic-CspTokenEvent:
-          destination: TOPIC.CSP.TOKEN.EVENT
+        microsoft-token:
+          destination: microsoft.token
           content-type: application/*+avro
       kafka:
         binder:

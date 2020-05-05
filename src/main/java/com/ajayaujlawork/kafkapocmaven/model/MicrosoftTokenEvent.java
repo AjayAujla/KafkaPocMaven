@@ -12,23 +12,23 @@ import org.apache.avro.message.SchemaStore;
 
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
-public class CspTokenEvent extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 460666575831277772L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"CspTokenEvent\",\"namespace\":\"com.ajayaujlawork.kafkapocmaven.model\",\"fields\":[{\"name\":\"creation_date_time\",\"type\":\"long\",\"logicalType\":\"timestamp-millis\"},{\"name\":\"expiration_date_time\",\"type\":\"long\",\"logicalType\":\"timestamp-millis\"},{\"name\":\"authorizer\",\"type\":\"string\"},{\"name\":\"tenant_domain\",\"type\":\"string\"},{\"name\":\"event_type\",\"type\":[\"null\",{\"type\":\"enum\",\"name\":\"CspTokenEventType\",\"symbols\":[\"CREATED\",\"UPDATED\",\"EXPIRING\",\"EXPIRED\"]}]}]}");
+public class MicrosoftTokenEvent extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
+  private static final long serialVersionUID = 8224677585752660370L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"MicrosoftTokenEvent\",\"namespace\":\"com.ajayaujlawork.kafkapocmaven.model\",\"fields\":[{\"name\":\"creation_date_time\",\"type\":\"long\",\"logicalType\":\"timestamp-millis\"},{\"name\":\"expiration_date_time\",\"type\":\"long\",\"logicalType\":\"timestamp-millis\"},{\"name\":\"authorizer\",\"type\":\"string\"},{\"name\":\"tenant_domain\",\"type\":\"string\"},{\"name\":\"event_type\",\"type\":[\"null\",{\"type\":\"enum\",\"name\":\"MicrosoftTokenEventType\",\"symbols\":[\"CREATED\",\"UPDATED\",\"EXPIRING\",\"EXPIRED\"]}]}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
 
-  private static final BinaryMessageEncoder<CspTokenEvent> ENCODER =
-      new BinaryMessageEncoder<CspTokenEvent>(MODEL$, SCHEMA$);
+  private static final BinaryMessageEncoder<MicrosoftTokenEvent> ENCODER =
+      new BinaryMessageEncoder<MicrosoftTokenEvent>(MODEL$, SCHEMA$);
 
-  private static final BinaryMessageDecoder<CspTokenEvent> DECODER =
-      new BinaryMessageDecoder<CspTokenEvent>(MODEL$, SCHEMA$);
+  private static final BinaryMessageDecoder<MicrosoftTokenEvent> DECODER =
+      new BinaryMessageDecoder<MicrosoftTokenEvent>(MODEL$, SCHEMA$);
 
   /**
    * Return the BinaryMessageDecoder instance used by this class.
    */
-  public static BinaryMessageDecoder<CspTokenEvent> getDecoder() {
+  public static BinaryMessageDecoder<MicrosoftTokenEvent> getDecoder() {
     return DECODER;
   }
 
@@ -36,17 +36,17 @@ public class CspTokenEvent extends org.apache.avro.specific.SpecificRecordBase i
    * Create a new BinaryMessageDecoder instance for this class that uses the specified {@link SchemaStore}.
    * @param resolver a {@link SchemaStore} used to find schemas by fingerprint
    */
-  public static BinaryMessageDecoder<CspTokenEvent> createDecoder(SchemaStore resolver) {
-    return new BinaryMessageDecoder<CspTokenEvent>(MODEL$, SCHEMA$, resolver);
+  public static BinaryMessageDecoder<MicrosoftTokenEvent> createDecoder(SchemaStore resolver) {
+    return new BinaryMessageDecoder<MicrosoftTokenEvent>(MODEL$, SCHEMA$, resolver);
   }
 
-  /** Serializes this CspTokenEvent to a ByteBuffer. */
+  /** Serializes this MicrosoftTokenEvent to a ByteBuffer. */
   public java.nio.ByteBuffer toByteBuffer() throws java.io.IOException {
     return ENCODER.encode(this);
   }
 
-  /** Deserializes a CspTokenEvent from a ByteBuffer. */
-  public static CspTokenEvent fromByteBuffer(
+  /** Deserializes a MicrosoftTokenEvent from a ByteBuffer. */
+  public static MicrosoftTokenEvent fromByteBuffer(
       java.nio.ByteBuffer b) throws java.io.IOException {
     return DECODER.decode(b);
   }
@@ -55,14 +55,14 @@ public class CspTokenEvent extends org.apache.avro.specific.SpecificRecordBase i
   @Deprecated public long expiration_date_time;
   @Deprecated public java.lang.CharSequence authorizer;
   @Deprecated public java.lang.CharSequence tenant_domain;
-  @Deprecated public CspTokenEventType event_type;
+  @Deprecated public com.ajayaujlawork.kafkapocmaven.model.MicrosoftTokenEventType event_type;
 
   /**
    * Default constructor.  Note that this does not initialize fields
    * to their default values from the schema.  If that is desired then
    * one should use <code>newBuilder()</code>.
    */
-  public CspTokenEvent() {}
+  public MicrosoftTokenEvent() {}
 
   /**
    * All-args constructor.
@@ -72,7 +72,7 @@ public class CspTokenEvent extends org.apache.avro.specific.SpecificRecordBase i
    * @param tenant_domain The new value for tenant_domain
    * @param event_type The new value for event_type
    */
-  public CspTokenEvent(java.lang.Long creation_date_time, java.lang.Long expiration_date_time, java.lang.CharSequence authorizer, java.lang.CharSequence tenant_domain, CspTokenEventType event_type) {
+  public MicrosoftTokenEvent(java.lang.Long creation_date_time, java.lang.Long expiration_date_time, java.lang.CharSequence authorizer, java.lang.CharSequence tenant_domain, com.ajayaujlawork.kafkapocmaven.model.MicrosoftTokenEventType event_type) {
     this.creation_date_time = creation_date_time;
     this.expiration_date_time = expiration_date_time;
     this.authorizer = authorizer;
@@ -101,7 +101,7 @@ public class CspTokenEvent extends org.apache.avro.specific.SpecificRecordBase i
     case 1: expiration_date_time = (java.lang.Long)value$; break;
     case 2: authorizer = (java.lang.CharSequence)value$; break;
     case 3: tenant_domain = (java.lang.CharSequence)value$; break;
-    case 4: event_type = (CspTokenEventType)value$; break;
+    case 4: event_type = (com.ajayaujlawork.kafkapocmaven.model.MicrosoftTokenEventType)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -174,7 +174,7 @@ public class CspTokenEvent extends org.apache.avro.specific.SpecificRecordBase i
    * Gets the value of the 'event_type' field.
    * @return The value of the 'event_type' field.
    */
-  public CspTokenEventType getEventType() {
+  public com.ajayaujlawork.kafkapocmaven.model.MicrosoftTokenEventType getEventType() {
     return event_type;
   }
 
@@ -182,47 +182,47 @@ public class CspTokenEvent extends org.apache.avro.specific.SpecificRecordBase i
    * Sets the value of the 'event_type' field.
    * @param value the value to set.
    */
-  public void setEventType(CspTokenEventType value) {
+  public void setEventType(com.ajayaujlawork.kafkapocmaven.model.MicrosoftTokenEventType value) {
     this.event_type = value;
   }
 
   /**
-   * Creates a new CspTokenEvent RecordBuilder.
-   * @return A new CspTokenEvent RecordBuilder
+   * Creates a new MicrosoftTokenEvent RecordBuilder.
+   * @return A new MicrosoftTokenEvent RecordBuilder
    */
-  public static CspTokenEvent.Builder newBuilder() {
-    return new CspTokenEvent.Builder();
+  public static com.ajayaujlawork.kafkapocmaven.model.MicrosoftTokenEvent.Builder newBuilder() {
+    return new com.ajayaujlawork.kafkapocmaven.model.MicrosoftTokenEvent.Builder();
   }
 
   /**
-   * Creates a new CspTokenEvent RecordBuilder by copying an existing Builder.
+   * Creates a new MicrosoftTokenEvent RecordBuilder by copying an existing Builder.
    * @param other The existing builder to copy.
-   * @return A new CspTokenEvent RecordBuilder
+   * @return A new MicrosoftTokenEvent RecordBuilder
    */
-  public static CspTokenEvent.Builder newBuilder(CspTokenEvent.Builder other) {
-    return new CspTokenEvent.Builder(other);
+  public static com.ajayaujlawork.kafkapocmaven.model.MicrosoftTokenEvent.Builder newBuilder(com.ajayaujlawork.kafkapocmaven.model.MicrosoftTokenEvent.Builder other) {
+    return new com.ajayaujlawork.kafkapocmaven.model.MicrosoftTokenEvent.Builder(other);
   }
 
   /**
-   * Creates a new CspTokenEvent RecordBuilder by copying an existing CspTokenEvent instance.
+   * Creates a new MicrosoftTokenEvent RecordBuilder by copying an existing MicrosoftTokenEvent instance.
    * @param other The existing instance to copy.
-   * @return A new CspTokenEvent RecordBuilder
+   * @return A new MicrosoftTokenEvent RecordBuilder
    */
-  public static CspTokenEvent.Builder newBuilder(CspTokenEvent other) {
-    return new CspTokenEvent.Builder(other);
+  public static com.ajayaujlawork.kafkapocmaven.model.MicrosoftTokenEvent.Builder newBuilder(com.ajayaujlawork.kafkapocmaven.model.MicrosoftTokenEvent other) {
+    return new com.ajayaujlawork.kafkapocmaven.model.MicrosoftTokenEvent.Builder(other);
   }
 
   /**
-   * RecordBuilder for CspTokenEvent instances.
+   * RecordBuilder for MicrosoftTokenEvent instances.
    */
-  public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<CspTokenEvent>
-    implements org.apache.avro.data.RecordBuilder<CspTokenEvent> {
+  public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<MicrosoftTokenEvent>
+    implements org.apache.avro.data.RecordBuilder<MicrosoftTokenEvent> {
 
     private long creation_date_time;
     private long expiration_date_time;
     private java.lang.CharSequence authorizer;
     private java.lang.CharSequence tenant_domain;
-    private CspTokenEventType event_type;
+    private com.ajayaujlawork.kafkapocmaven.model.MicrosoftTokenEventType event_type;
 
     /** Creates a new Builder */
     private Builder() {
@@ -233,7 +233,7 @@ public class CspTokenEvent extends org.apache.avro.specific.SpecificRecordBase i
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(CspTokenEvent.Builder other) {
+    private Builder(com.ajayaujlawork.kafkapocmaven.model.MicrosoftTokenEvent.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.creation_date_time)) {
         this.creation_date_time = data().deepCopy(fields()[0].schema(), other.creation_date_time);
@@ -258,10 +258,10 @@ public class CspTokenEvent extends org.apache.avro.specific.SpecificRecordBase i
     }
 
     /**
-     * Creates a Builder by copying an existing CspTokenEvent instance
+     * Creates a Builder by copying an existing MicrosoftTokenEvent instance
      * @param other The existing instance to copy.
      */
-    private Builder(CspTokenEvent other) {
+    private Builder(com.ajayaujlawork.kafkapocmaven.model.MicrosoftTokenEvent other) {
             super(SCHEMA$);
       if (isValidValue(fields()[0], other.creation_date_time)) {
         this.creation_date_time = data().deepCopy(fields()[0].schema(), other.creation_date_time);
@@ -298,7 +298,7 @@ public class CspTokenEvent extends org.apache.avro.specific.SpecificRecordBase i
       * @param value The value of 'creation_date_time'.
       * @return This builder.
       */
-    public CspTokenEvent.Builder setCreationDateTime(long value) {
+    public com.ajayaujlawork.kafkapocmaven.model.MicrosoftTokenEvent.Builder setCreationDateTime(long value) {
       validate(fields()[0], value);
       this.creation_date_time = value;
       fieldSetFlags()[0] = true;
@@ -318,7 +318,7 @@ public class CspTokenEvent extends org.apache.avro.specific.SpecificRecordBase i
       * Clears the value of the 'creation_date_time' field.
       * @return This builder.
       */
-    public CspTokenEvent.Builder clearCreationDateTime() {
+    public com.ajayaujlawork.kafkapocmaven.model.MicrosoftTokenEvent.Builder clearCreationDateTime() {
       fieldSetFlags()[0] = false;
       return this;
     }
@@ -336,7 +336,7 @@ public class CspTokenEvent extends org.apache.avro.specific.SpecificRecordBase i
       * @param value The value of 'expiration_date_time'.
       * @return This builder.
       */
-    public CspTokenEvent.Builder setExpirationDateTime(long value) {
+    public com.ajayaujlawork.kafkapocmaven.model.MicrosoftTokenEvent.Builder setExpirationDateTime(long value) {
       validate(fields()[1], value);
       this.expiration_date_time = value;
       fieldSetFlags()[1] = true;
@@ -356,7 +356,7 @@ public class CspTokenEvent extends org.apache.avro.specific.SpecificRecordBase i
       * Clears the value of the 'expiration_date_time' field.
       * @return This builder.
       */
-    public CspTokenEvent.Builder clearExpirationDateTime() {
+    public com.ajayaujlawork.kafkapocmaven.model.MicrosoftTokenEvent.Builder clearExpirationDateTime() {
       fieldSetFlags()[1] = false;
       return this;
     }
@@ -374,7 +374,7 @@ public class CspTokenEvent extends org.apache.avro.specific.SpecificRecordBase i
       * @param value The value of 'authorizer'.
       * @return This builder.
       */
-    public CspTokenEvent.Builder setAuthorizer(java.lang.CharSequence value) {
+    public com.ajayaujlawork.kafkapocmaven.model.MicrosoftTokenEvent.Builder setAuthorizer(java.lang.CharSequence value) {
       validate(fields()[2], value);
       this.authorizer = value;
       fieldSetFlags()[2] = true;
@@ -394,7 +394,7 @@ public class CspTokenEvent extends org.apache.avro.specific.SpecificRecordBase i
       * Clears the value of the 'authorizer' field.
       * @return This builder.
       */
-    public CspTokenEvent.Builder clearAuthorizer() {
+    public com.ajayaujlawork.kafkapocmaven.model.MicrosoftTokenEvent.Builder clearAuthorizer() {
       authorizer = null;
       fieldSetFlags()[2] = false;
       return this;
@@ -413,7 +413,7 @@ public class CspTokenEvent extends org.apache.avro.specific.SpecificRecordBase i
       * @param value The value of 'tenant_domain'.
       * @return This builder.
       */
-    public CspTokenEvent.Builder setTenantDomain(java.lang.CharSequence value) {
+    public com.ajayaujlawork.kafkapocmaven.model.MicrosoftTokenEvent.Builder setTenantDomain(java.lang.CharSequence value) {
       validate(fields()[3], value);
       this.tenant_domain = value;
       fieldSetFlags()[3] = true;
@@ -433,7 +433,7 @@ public class CspTokenEvent extends org.apache.avro.specific.SpecificRecordBase i
       * Clears the value of the 'tenant_domain' field.
       * @return This builder.
       */
-    public CspTokenEvent.Builder clearTenantDomain() {
+    public com.ajayaujlawork.kafkapocmaven.model.MicrosoftTokenEvent.Builder clearTenantDomain() {
       tenant_domain = null;
       fieldSetFlags()[3] = false;
       return this;
@@ -443,7 +443,7 @@ public class CspTokenEvent extends org.apache.avro.specific.SpecificRecordBase i
       * Gets the value of the 'event_type' field.
       * @return The value.
       */
-    public CspTokenEventType getEventType() {
+    public com.ajayaujlawork.kafkapocmaven.model.MicrosoftTokenEventType getEventType() {
       return event_type;
     }
 
@@ -452,7 +452,7 @@ public class CspTokenEvent extends org.apache.avro.specific.SpecificRecordBase i
       * @param value The value of 'event_type'.
       * @return This builder.
       */
-    public CspTokenEvent.Builder setEventType(CspTokenEventType value) {
+    public com.ajayaujlawork.kafkapocmaven.model.MicrosoftTokenEvent.Builder setEventType(com.ajayaujlawork.kafkapocmaven.model.MicrosoftTokenEventType value) {
       validate(fields()[4], value);
       this.event_type = value;
       fieldSetFlags()[4] = true;
@@ -472,7 +472,7 @@ public class CspTokenEvent extends org.apache.avro.specific.SpecificRecordBase i
       * Clears the value of the 'event_type' field.
       * @return This builder.
       */
-    public CspTokenEvent.Builder clearEventType() {
+    public com.ajayaujlawork.kafkapocmaven.model.MicrosoftTokenEvent.Builder clearEventType() {
       event_type = null;
       fieldSetFlags()[4] = false;
       return this;
@@ -480,14 +480,14 @@ public class CspTokenEvent extends org.apache.avro.specific.SpecificRecordBase i
 
     @Override
     @SuppressWarnings("unchecked")
-    public CspTokenEvent build() {
+    public MicrosoftTokenEvent build() {
       try {
-        CspTokenEvent record = new CspTokenEvent();
+        MicrosoftTokenEvent record = new MicrosoftTokenEvent();
         record.creation_date_time = fieldSetFlags()[0] ? this.creation_date_time : (java.lang.Long) defaultValue(fields()[0]);
         record.expiration_date_time = fieldSetFlags()[1] ? this.expiration_date_time : (java.lang.Long) defaultValue(fields()[1]);
         record.authorizer = fieldSetFlags()[2] ? this.authorizer : (java.lang.CharSequence) defaultValue(fields()[2]);
         record.tenant_domain = fieldSetFlags()[3] ? this.tenant_domain : (java.lang.CharSequence) defaultValue(fields()[3]);
-        record.event_type = fieldSetFlags()[4] ? this.event_type : (CspTokenEventType) defaultValue(fields()[4]);
+        record.event_type = fieldSetFlags()[4] ? this.event_type : (com.ajayaujlawork.kafkapocmaven.model.MicrosoftTokenEventType) defaultValue(fields()[4]);
         return record;
       } catch (java.lang.Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);
@@ -496,8 +496,8 @@ public class CspTokenEvent extends org.apache.avro.specific.SpecificRecordBase i
   }
 
   @SuppressWarnings("unchecked")
-  private static final org.apache.avro.io.DatumWriter<CspTokenEvent>
-    WRITER$ = (org.apache.avro.io.DatumWriter<CspTokenEvent>)MODEL$.createDatumWriter(SCHEMA$);
+  private static final org.apache.avro.io.DatumWriter<MicrosoftTokenEvent>
+    WRITER$ = (org.apache.avro.io.DatumWriter<MicrosoftTokenEvent>)MODEL$.createDatumWriter(SCHEMA$);
 
   @Override public void writeExternal(java.io.ObjectOutput out)
     throws java.io.IOException {
@@ -505,8 +505,8 @@ public class CspTokenEvent extends org.apache.avro.specific.SpecificRecordBase i
   }
 
   @SuppressWarnings("unchecked")
-  private static final org.apache.avro.io.DatumReader<CspTokenEvent>
-    READER$ = (org.apache.avro.io.DatumReader<CspTokenEvent>)MODEL$.createDatumReader(SCHEMA$);
+  private static final org.apache.avro.io.DatumReader<MicrosoftTokenEvent>
+    READER$ = (org.apache.avro.io.DatumReader<MicrosoftTokenEvent>)MODEL$.createDatumReader(SCHEMA$);
 
   @Override public void readExternal(java.io.ObjectInput in)
     throws java.io.IOException {

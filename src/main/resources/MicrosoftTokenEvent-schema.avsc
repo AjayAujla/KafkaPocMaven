@@ -1,12 +1,12 @@
 {
   "type":"record",
-  "name":"CspTokenEvent",
+  "name":"MicrosoftTokenEvent",
   "namespace":"com.ajayaujlawork.kafkapocmaven.model",
   "fields":[
     {"name": "creation_date_time", "type": "long", "logicalType": "timestamp-millis"},
     {"name": "expiration_date_time", "type": "long", "logicalType": "timestamp-millis"},
     {"name": "authorizer", "type": "string"},
     {"name": "tenant_domain", "type": "string"},
-    {"name": "event_type", "type": ["null", {"type": "enum", "name": "CspTokenEventType", "symbols": ["CREATED", "UPDATED", "EXPIRING", "EXPIRED"]} ]}
+    {"name": "event_type", "type": ["null", {"type": "enum", "name": "MicrosoftTokenEventType", "symbols": ["CREATED", "UPDATED", "EXPIRING", "EXPIRED"]} ]}
   ]
 }

@@ -20,8 +20,8 @@ Received MicrosoftTenantEvent={"user_id": "userId", "sales_agent_user_id": "sale
 `POST` `http://localhost:8080/publish/2`
 
 ```
-Publishing CspTokenEvent={"creation_date_time": 1588600246150, "expiration_date_time": 1588600246150, "authorizer": "authorizer", "tenant_domain": "tenantDomain", "event_type": "CREATED"}
-Received CspTokenEvent={"creation_date_time": 1588600246150, "expiration_date_time": 1588600246150, "authorizer": "authorizer", "tenant_domain": "tenantDomain", "event_type": "CREATED"}
+Publishing MicrosoftTokenEvent={"creation_date_time": 1588600246150, "expiration_date_time": 1588600246150, "authorizer": "authorizer", "tenant_domain": "tenantDomain", "event_type": "CREATED"}
+Received MicrosoftTokenEvent={"creation_date_time": 1588600246150, "expiration_date_time": 1588600246150, "authorizer": "authorizer", "tenant_domain": "tenantDomain", "event_type": "CREATED"}
 ```
 
 ## Project Guide
