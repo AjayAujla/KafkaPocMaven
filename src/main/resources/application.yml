@@ -10,10 +10,10 @@ spring:
           useNativeEncoding: true
       bindings:
         microsoft-tenant:
-          destination: microsoft.tenant
+          destination: 'microsoft.tenant'
           content-type: application/*+avro
         microsoft-token:
-          destination: microsoft.token
+          destination: 'microsoft.token'
           content-type: application/*+avro
       kafka:
         binder:
