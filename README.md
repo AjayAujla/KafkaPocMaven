@@ -8,6 +8,30 @@
 
 Perform `mvn clean compile` to execute it.
 
+### Schema Registry
+
+```
+brew install kafka
+zookeeper-server-start /usr/local/etc/kafka/zookeeper.properties
+kafka-server-start /usr/local/etc/kafka/server.properties
+kafka-topics --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic test
+kafka-console-producer --broker-list localhost:9092 --topic test
+kafka-console-consumer --bootstrap-server localhost:9092 --topic test --from-beginning
+```
+
+```
+export CONFLUENT_HOME=/Users/ajay.aujla/Documents/repos/confluent-5.5.0
+confluent local destroy
+confluent local stop
+confluent local start
+```
+
+- Setup scheme registry in the application.
+- Run project
+- View Confluent / Schema Registry data at the following endpoints:
+    - http://localhost:8081/subjects
+    - http://localhost:9021/clusters
+
 ## Running
 
 `POST` `http://localhost:8080/publish/1`
@@ -82,6 +106,5 @@ public class Application {
 
 # References
 
-https://github.com/AppDirect/usage-events/blob/d431155956a58995e8584f1a56bbca181e019d58/avro-schema/readme.md
-
-https://github.com/AppDirect/fusion_poc/tree/master/wg-eda/schema-registry/java
+- https://github.com/AppDirect/usage-events/blob/d431155956a58995e8584f1a56bbca181e019d58/avro-schema/readme.md
+- https://github.com/AppDirect/fusion_poc/tree/master/wg-eda/schema-registry/java
