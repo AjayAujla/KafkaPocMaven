@@ -3,10 +3,26 @@ spring:
     name: KafkaPocMaven
   cloud:
     stream:
+      default:
+        producer:
+          useNativeEncoding: true
+        consumer:
+          useNativeEncoding: true
       bindings:
-
         Topic-MicrosoftTenantEvent:
           destination: TOPIC.MICROSOFT.TENANT.EVENT
-
+          content-type: application/*+avro
         Topic-CspTokenEvent:
           destination: TOPIC.CSP.TOKEN.EVENT
+          content-type: application/*+avro
+      kafka:
+        binder:
+          producer-properties:
+            key.serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
+            value.serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
+            schema.registry.url: http://localhost:8081
+          consumer-properties:
+            key.deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+            value.deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+            schema.registry.url: http://localhost:8081
+            specific.avro.reader: true
