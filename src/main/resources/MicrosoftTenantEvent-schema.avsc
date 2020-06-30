@@ -1,22 +1,77 @@
 {
-  "type":"record",
-  "name":"MicrosoftTenantEvent",
-  "namespace":"com.ajayaujlawork.kafkapocmaven.model",
-  "fields":[
-    {"name": "user_id", "type": "string"},
-    {"name": "sales_agent_user_id", "type": "string"},
-    {"name": "partner", "type": "string"},
-    {"name": "sku", "type": "string"},
-    {"name": "event_type", "type": ["null", {"type": "enum", "name": "MicrosoftTenantEventType", "symbols": ["CREATED"]} ]},
-    {"name": "company_id", "type": "string"},
-    {"name": "external_company_id", "type": "string"},
-    {"name": "batch_id", "type": "string"},
-    {"name": "customer_id", "type": "string"},
-    {"name": "sales_agent_customer_id", "type": "string"},
-    {"name": "tenant_domain", "type": "string"},
-    {"name": "creation_date_time", "type": "long", "logicalType": "timestamp-millis"},
-    {"name": "marketplace_order_number", "type": "int"},
-    {"name": "tenant_admin_email", "type": "string"},
-    {"name": "purchaser_name", "type": "string"}
+  "type": "record",
+  "name": "MicrosoftTenantEvent",
+  "namespace": "com.ajayaujlawork.kafkapocmaven.model",
+  "fields": [
+    {
+      "name": "user_id",
+      "type": "string"
+    },
+    {
+      "name": "sales_agent_user_id",
+      "type": "string"
+    },
+    {
+      "name": "partner",
+      "type": "string"
+    },
+    {
+      "name": "sku",
+      "type": "string"
+    },
+    {
+      "name": "event_type",
+      "type": [
+        "null",
+        {
+          "type": "enum",
+          "name": "MicrosoftTenantEventType",
+          "symbols": [
+            "CREATED"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "company_id",
+      "type": "string"
+    },
+    {
+      "name": "external_company_id",
+      "type": "string"
+    },
+    {
+      "name": "batch_id",
+      "type": "string"
+    },
+    {
+      "name": "customer_id",
+      "type": "string"
+    },
+    {
+      "name": "sales_agent_customer_id",
+      "type": "string"
+    },
+    {
+      "name": "tenant_domain",
+      "type": "string"
+    },
+    {
+      "name": "creation_date_time",
+      "type": "long",
+      "logicalType": "timestamp-millis"
+    },
+    {
+      "name": "marketplace_order_number",
+      "type": "int"
+    },
+    {
+      "name": "tenant_admin_email",
+      "type": "string"
+    },
+    {
+      "name": "purchaser_name",
+      "type": "string"
+    }
   ]
 }
