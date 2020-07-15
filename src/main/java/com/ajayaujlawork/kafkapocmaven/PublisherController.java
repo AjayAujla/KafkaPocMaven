@@ -19,7 +19,12 @@ public class PublisherController {
     public ResponseEntity test() {
         log.info("AJAY handle /test");
 
-        String result = restTemplate.getForObject("https://stackoverflow.com/questions/47202380/resttemplate-simple-get-example", String.class);
+        
+        
+        
+        
+        
+        String result = restTemplate.getForObject("https://stack.overflow.com/questions/47202380/resttemplate-simple-get-example", String.class);
 
         return ResponseEntity.ok(result);
     }

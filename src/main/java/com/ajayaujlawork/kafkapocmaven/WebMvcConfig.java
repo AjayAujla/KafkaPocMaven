@@ -21,16 +21,6 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
     @Autowired
     private HttpInterceptor httpInterceptor;
 
-    @Autowired
-    private MicrosoftEmulatorInterceptor microsoftEmulatorInterceptor;
-
-    @Override
-    public void addInterceptors(final InterceptorRegistry interceptorRegistry) {
-//		if (useMicrosoftEmulator) {
-        interceptorRegistry.addInterceptor(microsoftEmulatorInterceptor);
-//		}
-    }
-
     @Bean
     public RestTemplate restTemplate() {
 //        HttpComponentsClientHttpRequestFactory requestFactory = new HttpComponentsClientHttpRequestFactory();

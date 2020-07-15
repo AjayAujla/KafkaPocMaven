@@ -1,17 +1,17 @@
 package com.ajayaujlawork.kafkapocmaven;
 
-import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
-
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
 
 import lombok.extern.slf4j.Slf4j;
 
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpRequest;
 import org.springframework.http.client.ClientHttpRequestExecution;
 import org.springframework.http.client.ClientHttpRequestInterceptor;
 import org.springframework.http.client.ClientHttpResponse;
+import org.springframework.http.client.support.HttpRequestWrapper;
 import org.springframework.stereotype.Component;
 
 @Slf4j
@@ -20,13 +20,12 @@ public class HttpInterceptor implements ClientHttpRequestInterceptor {
 
     @Override
     public ClientHttpResponse intercept(HttpRequest request, byte[] body, ClientHttpRequestExecution execution) throws IOException {
-        HttpHeaders headers = request.getHeaders();
-        headers.add("Accept", APPLICATION_JSON_VALUE);
-        headers.add("Content-Type", APPLICATION_JSON_VALUE);
         traceRequest(request, body);
         ClientHttpResponse response = execution.execute(request, body);
         traceResponse(response);
         return response;
+//        return execution.execute(new MyHttpRequestWrapper(request), body);
+        
     }
 
     private void traceRequest(HttpRequest request, byte[] body) {
@@ -44,5 +43,20 @@ public class HttpInterceptor implements ClientHttpRequestInterceptor {
         log.info("Status text  : {}", response.getStatusText());
         log.info("Headers      : {}", response.getHeaders());
         log.info("=======================Response end===========================================");
+    }
+
+    private class MyHttpRequestWrapper extends HttpRequestWrapper {
+        MyHttpRequestWrapper(HttpRequest request) {
+            super(request);
+        }
+
+        @Override
+        public URI getURI() {
+            try {
+                return new URI("https://github.com/AppDirect");
+            } catch (URISyntaxException e) {
+                throw new RuntimeException(e);
+            }
+        }
     }
 }
