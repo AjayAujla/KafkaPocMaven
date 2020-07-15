@@ -1,4 +1,4 @@
-package com.ajayaujlawork.kafkapocmaven;
+package com.ajayaujlawork.test;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -10,7 +10,7 @@ import org.springframework.web.client.RestTemplate;
 
 @Slf4j
 @RestController
-public class PublisherController {
+public class TestController {
 
     @Autowired
     private RestTemplate restTemplate;
@@ -18,13 +18,8 @@ public class PublisherController {
     @GetMapping("/test")
     public ResponseEntity test() {
         log.info("AJAY handle /test");
-
         
-        
-        
-        
-        
-        String result = restTemplate.getForObject("https://stack.overflow.com/questions/47202380/resttemplate-simple-get-example", String.class);
+        final String result = restTemplate.getForObject("https://google.ca/search?q=hallo", String.class);
 
         return ResponseEntity.ok(result);
     }
